@@ -27,13 +27,8 @@
     	ZWrite Off
     	Cull Off
 
-		Pass
-		{
-			CGPROGRAM
-			#pragma vertex vert
-			#pragma fragment frag
 
-			
+		CGINCLUDE
 			#include "UnityCG.cginc"
 
 			struct appdata
@@ -84,12 +79,13 @@
 				fixed4 color_out;
 				color_out.rgba = 1;
 
+				// sample the base textures
 				float2 t1 = _Time.y * _ScrollSpeed1;
 				float2 t2 = _Time.y * _ScrollSpeed2;
-				
 				fixed4 tex1 = tex2D(_Texture1, i.uv + t1);
 				fixed4 tex2 = tex2D(_Texture2, i.uv + t2);
 				
+				// combine and bend them
 				color_out.rgb = min(tex1, tex2);
 				color_out.rgb = pow(color_out.rgb, _TexturePower);
 				color_out.rgb *= _TextureContribution;
@@ -108,7 +104,38 @@
 				// color_out.g = 1;
 				return color_out;
 			}
+		ENDCG
+
+		Pass
+		{
+			Cull Back
+			Stencil {
+		Ref 2
+		Comp NotEqual
+	    }
+
+
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
 			ENDCG
 		}
+
+		Pass
+		{
+			Cull Front
+			Stencil {
+		Ref 1
+		Comp NotEqual
+	    }
+
+
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+			ENDCG
+		}
+
+
 	}
 }
