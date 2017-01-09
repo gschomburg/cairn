@@ -95,6 +95,7 @@ ModelImporter:
     7400014: Armature|Walk
     7400016: Armature|Walk.2
     7400018: Armature|Walking.2
+    7400020: Armature|_T
     9500000: //RootNode
     11100000: //RootNode
     13700000: Body
@@ -108,10 +109,10 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName:
-    animationImportErrors:
-    animationImportWarnings:
-    animationRetargetingWarnings:
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 1
     animationRotationError: 0.5
@@ -155,7 +156,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName:
+    rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 1
@@ -164,6 +165,6 @@ ModelImporter:
   animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
