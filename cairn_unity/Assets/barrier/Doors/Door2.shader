@@ -1,4 +1,4 @@
-﻿Shader "Cairn/Door1"
+﻿Shader "Cairn/Door2"
 {
 	SubShader
 	{
@@ -11,10 +11,10 @@
 		Pass
 		{
 			Stencil {
-		Ref 1
-		Comp always
-		Pass replace
-	    }
+				Ref 2
+				Comp always
+				Pass replace
+			}
 
 
 			CGPROGRAM

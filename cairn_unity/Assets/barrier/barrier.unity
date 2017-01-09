@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 1909390492}
   - component: {fileID: 1909390493}
   m_Layer: 0
-  m_Name: DoorHinge
+  m_Name: DoorPair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

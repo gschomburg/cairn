@@ -41,6 +41,8 @@
 			struct v2f
 			{
 				float2 uv : TEXCOORD0;
+				float2 uv1 : TEXCOORD3;
+				float2 uv2 : TEXCOORD4;
 				float4 vertex : SV_POSITION;
 				float3 viewDir : TEXCOORD2;
 				float3 normal : NORMAL;
@@ -66,7 +68,9 @@
 				v2f o;
 
 				o.vertex = UnityObjectToClipPos(v.vertex);
-				o.uv = TRANSFORM_TEX(v.uv, _Texture1);
+				o.uv1 = TRANSFORM_TEX(v.uv, _Texture1);
+				o.uv2 = TRANSFORM_TEX(v.uv, _Texture2);
+				o.uv = v.uv;
 				o.normal = UnityObjectToWorldNormal(v.normal);
 				o.viewDir = normalize(UnityWorldSpaceViewDir(mul(unity_ObjectToWorld, v.vertex)));
 
@@ -82,11 +86,12 @@
 				// sample the base textures
 				float2 t1 = _Time.y * _ScrollSpeed1;
 				float2 t2 = _Time.y * _ScrollSpeed2;
-				fixed4 tex1 = tex2D(_Texture1, i.uv + t1);
-				fixed4 tex2 = tex2D(_Texture2, i.uv + t2);
+				fixed4 tex1 = tex2D(_Texture1, i.uv1 + t1);
+				fixed4 tex2 = tex2D(_Texture2, i.uv2 + t2);
 				
 				// combine and bend them
 				color_out.rgb = min(tex1, tex2);
+				// color_out.rgb = tex1 * tex2;
 				color_out.rgb = pow(color_out.rgb, _TexturePower);
 				color_out.rgb *= _TextureContribution;
 				

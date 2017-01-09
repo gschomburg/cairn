@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Door1
-  m_Shader: {fileID: 0}
+  m_Name: Door2
+  m_Shader: {fileID: 4800000, guid: 3f4d3ac9c6b7446539cc8725999e45d9, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
