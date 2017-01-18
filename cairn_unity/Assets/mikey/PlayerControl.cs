@@ -144,7 +144,7 @@ public class PlayerControl : MonoBehaviour {
                 float forwardWeight = forward / walkSpeed.magnitude;
                 float strafeWeight = left / walkSpeed.magnitude;
 
-                Debug.Log("forwardWeight:" + forwardWeight + "    strafeWeight:" + strafeWeight);
+                //Debug.Log("forwardWeight:" + forwardWeight + "    strafeWeight:" + strafeWeight);
                 CharacterAnim.Blend("Armature|Walk", Mathf.Abs(forwardWeight), .1f);
                 CharacterAnim.Blend("Armature|Strafe", Mathf.Abs(strafeWeight));
             }
@@ -164,11 +164,11 @@ public class PlayerControl : MonoBehaviour {
     {
         // || collision.gameObject.layer == 17 
         //grab onto regular platforms too
-        Debug.Log("OnCollisionEnter");
-        Debug.Log(collision.gameObject.layer);
+        //Debug.Log("OnCollisionEnter");
+        //Debug.Log(collision.gameObject.layer);
         if (collision.gameObject.layer == 19)
         {
-            Debug.Log("landed on platform");
+            //Debug.Log("landed on platform");
             parentPlatform = collision.gameObject.transform;
             transform.parent = parentPlatform;
             rb.isKinematic = true;
@@ -178,11 +178,11 @@ public class PlayerControl : MonoBehaviour {
     }
     void OnCollisionExit(Collision collision)
     {
-        Debug.Log("OnCollisionExit");
-        Debug.Log(collision.gameObject.layer);
+        //Debug.Log("OnCollisionExit");
+        //Debug.Log(collision.gameObject.layer);
         if (collision.gameObject.layer == 19 && collision.gameObject.transform == parentPlatform)
         {
-            Debug.Log("left platform");
+            //Debug.Log("left platform");
             parentPlatform = null;
             transform.parent = originalParent;
             rb.isKinematic = false;
