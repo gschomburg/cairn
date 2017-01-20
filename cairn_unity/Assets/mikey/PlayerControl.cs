@@ -71,17 +71,20 @@ public class PlayerControl : MonoBehaviour {
         //neckBone.localEulerAngles = new Vector3(headRotationOffsetX, 0, 0);
 
         //hold on to platform
-        if (Input.GetAxis("ADS") == 1f && parentPlatform !=null && IsGrounded(.1f))
-        {
-            rb.isKinematic = true;
-            transform.parent = parentPlatform;
-            return;
-        }
-        else
-        {
-            rb.isKinematic = false;
-            transform.parent = originalParent;
-        }
+        //if (Input.GetAxis("ADS") == 1f && parentPlatform !=null && IsGrounded(.1f))
+        //{
+        //    rb.isKinematic = true;
+        //    transform.parent = parentPlatform;
+        //    return;
+        //}
+        //else
+        //{
+        //    rb.isKinematic = false;
+        //    transform.parent = originalParent;
+        //}
+
+        //lock to RotationPlatforms id 19
+
 
         // translate body
         float forward = Input.GetAxis("Vertical") * forward_speed;
@@ -98,6 +101,7 @@ public class PlayerControl : MonoBehaviour {
         }
 
         if (Input.GetButtonDown ("Jump") && IsGrounded(.7f)) {
+            rb.isKinematic = false;
 			rb.AddForce (new Vector3 (0, jump_strength, 0), ForceMode.Impulse);
             isJumping = true;
         }
@@ -140,7 +144,7 @@ public class PlayerControl : MonoBehaviour {
                 float forwardWeight = forward / walkSpeed.magnitude;
                 float strafeWeight = left / walkSpeed.magnitude;
 
-                Debug.Log("forwardWeight:" + forwardWeight + "    strafeWeight:" + strafeWeight);
+                //Debug.Log("forwardWeight:" + forwardWeight + "    strafeWeight:" + strafeWeight);
                 CharacterAnim.Blend("Armature|Walk", Mathf.Abs(forwardWeight), .1f);
                 CharacterAnim.Blend("Armature|Strafe", Mathf.Abs(strafeWeight));
             }
@@ -160,18 +164,30 @@ public class PlayerControl : MonoBehaviour {
     {
         // || collision.gameObject.layer == 17 
         //grab onto regular platforms too
+        //Debug.Log("OnCollisionEnter");
+        //Debug.Log(collision.gameObject.layer);
         if (collision.gameObject.layer == 19)
         {
-            Debug.Log("landed on platform");
+            //Debug.Log("landed on platform");
             parentPlatform = collision.gameObject.transform;
+            transform.parent = parentPlatform;
+            rb.isKinematic = true;
+            
+            //transform.localScale = Vector3.Scale(transform.lossyScale, new Vector3(1 / transform.lossyScale.x, 1 / transform.lossyScale.y, 1 / transform.lossyScale.z));
         }
     }
     void OnCollisionExit(Collision collision)
     {
+        //Debug.Log("OnCollisionExit");
+        //Debug.Log(collision.gameObject.layer);
         if (collision.gameObject.layer == 19 && collision.gameObject.transform == parentPlatform)
         {
-            Debug.Log("left platform");
+            //Debug.Log("left platform");
             parentPlatform = null;
+            transform.parent = originalParent;
+            rb.isKinematic = false;
+            
+            //transform.localScale = new Vector3(1, 1, 1);
         }
     }
 
