@@ -15,15 +15,15 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 7
   m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogColor: {r: 0.71194017, g: 0.8659485, b: 0.9685596, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.36862746, g: 0.34901962, b: 0.34117648, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 2.56
   m_AmbientMode: 0
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -36,8 +36,8 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44906974, g: 0.4957081, b: 0.55727893, a: 1}
+  m_Sun: {fileID: 1175255713}
+  m_IndirectSpecularColor: {r: 0.44906974, g: 0.49570817, b: 0.557279, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -254,7 +254,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 008f3198bba724bb895bc4ac68d2cfb2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.46
+      value: -14.55
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 008f3198bba724bb895bc4ac68d2cfb2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -262,7 +262,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 008f3198bba724bb895bc4ac68d2cfb2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.69
+      value: 11.78
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 008f3198bba724bb895bc4ac68d2cfb2, type: 3}
       propertyPath: m_LocalRotation.x
@@ -338,6 +338,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 008f3198bba724bb895bc4ac68d2cfb2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 008f3198bba724bb895bc4ac68d2cfb2, type: 3}
   m_IsPrefabParent: 0
@@ -362,19 +366,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 008f3198bba724bb895bc4ac68d2cfb2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.43953663
+      value: -0.43953666
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 008f3198bba724bb895bc4ac68d2cfb2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.55390215
+      value: 0.5539022
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 008f3198bba724bb895bc4ac68d2cfb2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.5539021
+      value: 0.55390215
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 008f3198bba724bb895bc4ac68d2cfb2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.43953654
+      value: 0.43953657
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 008f3198bba724bb895bc4ac68d2cfb2, type: 3}
       propertyPath: m_RootOrder
@@ -498,7 +502,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 0.8461262, b: 0.42647058, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -901,7 +905,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 0.6544118, b: 0.6544118, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -917,7 +921,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -952,7 +956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectType: 3
   preset: 7
-  useFogVolumes: 0
+  useFogVolumes: 1
   enableDithering: 0
   alpha: 0.957
   noiseStrength: 0.396
@@ -965,7 +969,7 @@ MonoBehaviour:
   baselineHeight: -3
   clipUnderBaseline: 0
   turbulence: 2
-  speed: 0.0178
+  speed: 0.0434
   color: {r: 0.85294116, g: 0.85294116, b: 0.85294116, a: 1}
   color2: {r: 0.7794118, g: 0.7794118, b: 0.7794118, a: 1}
   skyHaze: 140
@@ -1093,19 +1097,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 008f3198bba724bb895bc4ac68d2cfb2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.55973005
+      value: -0.5597301
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 008f3198bba724bb895bc4ac68d2cfb2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.4320906
+      value: 0.43209064
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 008f3198bba724bb895bc4ac68d2cfb2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.43209058
+      value: 0.4320906
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 008f3198bba724bb895bc4ac68d2cfb2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.55973
+      value: 0.55973005
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 008f3198bba724bb895bc4ac68d2cfb2, type: 3}
       propertyPath: m_RootOrder
