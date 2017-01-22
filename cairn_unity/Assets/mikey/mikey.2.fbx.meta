@@ -46,6 +46,8 @@ ModelImporter:
     100076: UpperLeg.R
     100078: BodyCopy
     100080: HeadCopy.2
+    100082: Left_Eye
+    100084: Right_Eye
     400000: Armature
     400002: Belly
     400004: Belly_end
@@ -87,6 +89,8 @@ ModelImporter:
     400076: UpperLeg.R
     400078: BodyCopy
     400080: HeadCopy.2
+    400082: Left_Eye
+    400084: Right_Eye
     2300000: Body
     2300002: Head
     2300004: BodyCopy
@@ -99,6 +103,8 @@ ModelImporter:
     4300002: Body
     4300004: BodyCopy
     4300006: HeadCopy.2
+    4300008: Right_Eye
+    4300010: Left_Eye
     7400000: Armature|CameraAction
     7400002: Armature|Crouching
     7400004: Armature|Jump
@@ -115,6 +121,8 @@ ModelImporter:
     11100000: //RootNode
     13700000: Body
     13700002: Head
+    13700004: Left_Eye
+    13700006: Right_Eye
   materials:
     importMaterials: 1
     materialName: 0
