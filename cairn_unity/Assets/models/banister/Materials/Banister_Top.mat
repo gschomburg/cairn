@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: floor_1.1
+  m_Name: Banister_Top
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 1
@@ -18,7 +18,7 @@ Material:
     - first:
         name: _BumpMap
       second:
-        m_Texture: {fileID: 2800000, guid: 0b41ce25b5bac0f42b5d273dde195a01, type: 3}
+        m_Texture: {fileID: 2800000, guid: b8909a2f99b6f402f8c4e33a5c1f7dae, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -48,13 +48,13 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: 07743ba522e4e344f8bc768f23c5a5d3, type: 3}
+        m_Texture: {fileID: 2800000, guid: b94a88a21e3bc422e89d001e22163512, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MetallicGlossMap
       second:
-        m_Texture: {fileID: 2800000, guid: 17656173004158c45a254d4f3ee467ac, type: 3}
+        m_Texture: {fileID: 2800000, guid: e9ba73841b6664700bfcbb7f9e7d0fe8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -84,7 +84,7 @@ Material:
       second: 0
     - first:
         name: _GlossMapScale
-      second: 0.691
+      second: 1
     - first:
         name: _Glossiness
       second: 0.5
