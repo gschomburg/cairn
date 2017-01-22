@@ -11,6 +11,7 @@ public class PlayerControl2 : MonoBehaviour {
 	public float look_speed = 100.0f;
 	public Transform neckBone;
 	public Transform torsoBone;
+    public Transform headCamera;
 
 
 	private float headRotationX = 0;
@@ -45,8 +46,9 @@ public class PlayerControl2 : MonoBehaviour {
 		headRotationX += lookUpDown;
 		headRotationX = Mathf.Clamp(headRotationX, -50f, 60f);
 
-		// handle jumping
-		Debug.DrawLine(transform.position + new Vector3(0,.1f,0),
+        headCamera.localEulerAngles = new Vector3(headRotationX, 0, 0);
+        // handle jumping
+        Debug.DrawLine(transform.position + new Vector3(0,.1f,0),
 					   transform.position + new Vector3(0,.1f,0) - Vector3.up * .2f
 					   , Color.red);
 		if (Input.GetButtonDown ("Jump") && IsGrounded(.2f)) {
