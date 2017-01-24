@@ -80,36 +80,17 @@
 
 
 				fixed4 col = tex2D(_MainTex, i.uv);
-				fixed4 black;
-				black.rgb = 0;
-				black.a = 1;
+
 				// visualize wsPos
 
 				// a vectorized map would win here.
 
-				col.r = map(wsPos.x, -.2, .2, 0, 1);
-				col.g = map(wsPos.y, -.2, .2, 0, 1);
-				col.b = map(wsPos.z, -.2, .2, 0, 1);
+				col.r = map(wsPos.x, -.5, .5, 0, 1);
+				col.g = map(wsPos.y, -.5, .5, 0, 1);
+				col.b = map(wsPos.z, -.5, .5, 0, 1);
 
-				//float groundFog = saturate(normalizeInRange(wsPos.y, 0, - 4));
-//				groundFog = clamp(groundFog, 0, 1);
 
-				//fixed4 fogColor;
-				//fogColor.r = 1;
-				//fogColor.g = 0;
-				//fogColor.b = 0;
-				//fogColor.a = 1;
-
-				//col = lerp(col, fogColor, groundFog);
-				/*if (linDepth > 500) {
-					return black;
-				}*/
-				/*if (unity_CameraProjection[0][2] > 0 ) {
-					return black;
-				}*/
-				col.rgb = _WorldSpaceCameraPos.rgb;
 				return col;
-				//return _WorldSpaceCameraPos;
 			}
 			ENDCG
 		}
