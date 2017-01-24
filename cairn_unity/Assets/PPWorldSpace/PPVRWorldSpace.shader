@@ -47,14 +47,14 @@
 				o.vertex = v.vertex * float4(2, 2, 1, 1) - float4(1, 1, 0, 0);
 
 				// Construct a vector on the Z = 0 plane corresponding to our screenspace location.
-				float4 clip = float4((v.uv.xy * 2.0f - 1.0f) * float2(1, 1), 0.0f, 1.0f);
+				float4 clip = float4((v.uv.xy * 2.0f - 1.0f) * float2(1, -1), 0.0f, 1.0f);
 				// Use matrix computed in script to convert to worldspace.
 				o.worldDirection = mul(_ClipToWorld, clip) -_WorldSpaceCameraPos;
 
 				// UV passthrough.
 				// Flipped Y may be a platform-specific difference - check OpenGL version.
 				o.uv = v.uv;
-				
+				o.uv.y = 1 - o.uv.y;
 				
 
 				return o;
@@ -80,14 +80,35 @@
 				float3 wsPos = i.worldDirection * depth + _WorldSpaceCameraPos;
 				
 				fixed4 col;
-				col.r = map(wsPos.x, -.5, .5, 0, 1);
+				/*col.r = map(wsPos.x, -.5, .5, 0, 1);
 				col.g = map(wsPos.y, -.5, .5, 0, 1);
 				col.b = map(wsPos.z, -.5, .5, 0, 1);
-				col.a = 1;
+				col.a = 1;*/
 
-				//col.rgb = depth / 4;
-				return col;
 
+				float2 lV = wsPos.xz;
+
+				float ground_fog = saturate(map(wsPos.y, 5, -.5, 0, 1));
+				float dist_fog = saturate(map(length(lV), 5, 10, 0, 1));
+				float fog = ground_fog * dist_fog;
+				
+				// noise
+				 fog -= frac(sin(wsPos.x) * 100000) * .05;
+
+
+
+				fixed4 fogColor;
+				fogColor.r = 0;
+				fogColor.g = 0;
+				fogColor.b = 0.5;
+				fogColor.a = 1.0;
+
+				//fixed4 noise;
+				//noise.rgba = frac(sin(wsPos.x) * 100000);
+				//return noise;
+
+				return lerp(orig_col, fogColor, fog);// (col + orig_col) * .5;
+				
 
 			}
 

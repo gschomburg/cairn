@@ -13,11 +13,12 @@ public class PPVRWorldSpace : MonoBehaviour
 	{
 		m_shader = Shader.Find("Hidden/PPVRWorldSpace");
 		m_material = new Material(m_shader);
-	}
+        Camera.main.depthTextureMode = DepthTextureMode.Depth;
+    }
 
 	void OnRenderImage(RenderTexture source, RenderTexture dest)
 	{
-		Camera.main.depthTextureMode = DepthTextureMode.Depth;
+		
 		// Set public values
 		//m_material.SetTexture("_MainTex", source);
 

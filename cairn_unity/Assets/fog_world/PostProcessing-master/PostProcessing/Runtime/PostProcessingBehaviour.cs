@@ -145,8 +145,8 @@ namespace UnityEngine.PostProcessing
             context.camera.depthTextureMode = flags;
 
             // Temporal antialiasing jittering, needs to happen before culling
-            if (!m_RenderingInSceneView && m_Taa.active && !profile.debugViews.willInterrupt)
-                m_Taa.SetProjectionMatrix();
+            //if (!m_RenderingInSceneView && m_Taa.active && !profile.debugViews.willInterrupt)
+             //   m_Taa.SetProjectionMatrix();
         }
 
         void OnPreRender()
