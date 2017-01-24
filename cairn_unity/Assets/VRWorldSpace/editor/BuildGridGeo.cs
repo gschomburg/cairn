@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class BuildGridGeo : MonoBehaviour {
-	// Use this for initialization
-	void Start ()
+
+	[MenuItem("GenTools/BuildGridGeo")]
+	static void Create ()
 	{
 		for (int x = -5; x < 5; x++) {
 			for (int z = -5; z < 5; z++) {
@@ -20,8 +22,5 @@ public class BuildGridGeo : MonoBehaviour {
 		}
 	}
 
-	// Update is called once per frame
-	void Update ()
-	{
-	}
+
 }
