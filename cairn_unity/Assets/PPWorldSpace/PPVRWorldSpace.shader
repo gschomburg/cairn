@@ -14,7 +14,7 @@
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
-			
+
 			#include "UnityCG.cginc"
 
 
@@ -42,7 +42,7 @@
 
 				// http://gamedev.stackexchange.com/questions/131978/shader-reconstructing-position-from-depth-in-vr-through-projection-matrix
 
-				
+
 				// No need for a matrix multiply here when a FMADD will do.
 				o.vertex = v.vertex * float4(2, 2, 1, 1) - float4(1, 1, 0, 0);
 
@@ -55,11 +55,11 @@
 				// Flipped Y may be a platform-specific difference - check OpenGL version.
 				o.uv = v.uv;
 				o.uv.y = 1 - o.uv.y;
-				
+
 
 				return o;
 			}
-			
+
 			float map(float v, float fromMin, float fromMax, float toMin, float toMax) {
 				float vN = (v - fromMin) / (fromMax - fromMin);
 				return toMin + vN * (toMax - toMin);
@@ -72,17 +72,18 @@
 				fixed4 orig_col = tex2D(_MainTex, i.uv);
 				float2 dUV = i.uv;
 				//dUV.y = 1.0f - dUV.y;
-				
+
 				// Read depth, linearizing into worldspace units.
 				float depth = LinearEyeDepth(UNITY_SAMPLE_DEPTH(tex2D(_CameraDepthTexture, dUV)));
 
 				// Multiply by worldspace direction (no perspective divide needed).
 				float3 wsPos = i.worldDirection * depth + _WorldSpaceCameraPos;
-				
+
 				fixed4 col;
 				/*col.r = map(wsPos.x, -.5, .5, 0, 1);
 				col.g = map(wsPos.y, -.5, .5, 0, 1);
 				col.b = map(wsPos.z, -.5, .5, 0, 1);
+
 				col.a = 1;*/
 
 
@@ -91,9 +92,10 @@
 				float ground_fog = saturate(map(wsPos.y, 5, -.5, 0, 1));
 				float dist_fog = saturate(map(length(lV), 5, 10, 0, 1));
 				float fog = ground_fog * dist_fog;
-				
+
 				// noise
 				 fog -= frac(sin(wsPos.x) * 100000) * .05;
+
 
 
 
@@ -108,12 +110,12 @@
 				//return noise;
 
 				return lerp(orig_col, fogColor, fog);// (col + orig_col) * .5;
-				
+
 
 			}
 
 
-			
+
 
 			ENDCG
 		}
