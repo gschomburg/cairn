@@ -42,12 +42,12 @@
 
 				// http://gamedev.stackexchange.com/questions/131978/shader-reconstructing-position-from-depth-in-vr-through-projection-matrix
 
-
+				
 				// No need for a matrix multiply here when a FMADD will do.
 				o.vertex = v.vertex * float4(2, 2, 1, 1) - float4(1, 1, 0, 0);
 
 				// Construct a vector on the Z = 0 plane corresponding to our screenspace location.
-				float4 clip = float4((v.uv.xy * 2.0f - 1.0f) * float2(1, -1), 0.0f, 1.0f);
+				float4 clip = float4((v.uv.xy * 2.0f - 1.0f) * float2(1, 1), 0.0f, 1.0f);
 				// Use matrix computed in script to convert to worldspace.
 				o.worldDirection = mul(_ClipToWorld, clip) -_WorldSpaceCameraPos;
 
@@ -55,7 +55,7 @@
 				// Flipped Y may be a platform-specific difference - check OpenGL version.
 				o.uv = v.uv;
 				
-				o.uv.y = 1.0f - o.uv.y;
+				
 
 				return o;
 			}
@@ -68,11 +68,13 @@
 
 			fixed4 frag (v2f i) : SV_Target
 			{
+
 				fixed4 orig_col = tex2D(_MainTex, i.uv);
-				
+				float2 dUV = i.uv;
+				//dUV.y = 1.0f - dUV.y;
 				
 				// Read depth, linearizing into worldspace units.
-				float depth = LinearEyeDepth(UNITY_SAMPLE_DEPTH(tex2D(_CameraDepthTexture, i.uv)));
+				float depth = LinearEyeDepth(UNITY_SAMPLE_DEPTH(tex2D(_CameraDepthTexture, dUV)));
 
 				// Multiply by worldspace direction (no perspective divide needed).
 				float3 wsPos = i.worldDirection * depth + _WorldSpaceCameraPos;
@@ -82,6 +84,8 @@
 				col.g = map(wsPos.y, -.5, .5, 0, 1);
 				col.b = map(wsPos.z, -.5, .5, 0, 1);
 				col.a = 1;
+
+				//col.rgb = depth / 4;
 				return col;
 
 
