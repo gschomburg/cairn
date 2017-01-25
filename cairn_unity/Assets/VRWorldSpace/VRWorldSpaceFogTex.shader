@@ -96,7 +96,7 @@
 				float2 offset;
 				offset.xy = .5 / m_texture_scale;
 
-				fixed4 fog_col = tex2D(m_fog_texture, (wsPos.xz + offset) * m_texture_scale);
+				fixed4 fog_col = tex2D(m_fog_texture, (wsPos.xy + offset) * m_texture_scale);
 
 
 				float4 c;

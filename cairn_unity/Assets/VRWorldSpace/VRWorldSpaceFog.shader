@@ -72,12 +72,16 @@
 
 			fixed4 frag (v2f i) : SV_Target
 			{
+
+				fixed4 col;
+				col.rgba = 1;
+				//return col;
 				// Read depth, linearizing into worldspace units.
 				float depth = LinearEyeDepth(UNITY_SAMPLE_DEPTH(tex2D(_CameraDepthTexture, i.uv)));
 				// Multiply by worldspace direction (no perspective divide needed).
 				float3 wsPos = i.worldDirection * depth + _WorldSpaceCameraPos;
 
-
+				
 
 
 
@@ -85,7 +89,7 @@
 				float ground_fog = saturate(map(wsPos.y, m_height_min, m_height_max, 0, 1));
 				float dist_fog = saturate(map(length(wsPos.xz), m_distance_min, m_distance_max, 0, 1));
 				float fog = ground_fog * dist_fog;
-
+				
 
 				fixed4 orig_col = tex2D(_MainTex, i.uv);
 				return lerp(orig_col, m_fog_color, fog * m_fog_color.a);
