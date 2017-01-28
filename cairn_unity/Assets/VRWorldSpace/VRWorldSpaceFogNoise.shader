@@ -93,7 +93,7 @@
 
 				fixed4 noise_color = texCUBE(m_noise_texture, mul(m_noise_matrix, wsPos).xyz);
 				/*return noise_color;*/
-				return lerp(orig_col, m_fog_color, fog * m_fog_color.a + noise_color.r * dist_fog * m_noise_intensity);
+				return lerp(orig_col, m_fog_color, min(fog * m_fog_color.a + noise_color.r * dist_fog * m_noise_intensity, 1.0));
 				/*return lerp(orig_col, m_fog_color, fog * m_fog_color.a);
 				return texture_color.r;*/
 
