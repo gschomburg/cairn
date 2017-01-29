@@ -34,6 +34,7 @@ public class VRWorldSpaceFogNoise : MonoBehaviour
 		Camera.main.depthTextureMode = DepthTextureMode.Depth;
 	}
 
+	[ImageEffectOpaque]
 	void OnRenderImage (RenderTexture source, RenderTexture dest)
 	{
 		m_material.SetFloat ("_flip", m_flip ? -1 : 1);

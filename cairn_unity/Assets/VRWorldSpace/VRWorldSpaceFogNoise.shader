@@ -9,6 +9,7 @@
 		// No culling or depth
 		Cull Off ZWrite Off ZTest Always
 
+
 		Pass
 		{
 			CGPROGRAM
@@ -116,7 +117,8 @@
 
 				// blend fog onto original color
 				noise_color += noise_mask_color;
-				return lerp(orig_col, m_fog_color, saturate(fog * m_fog_color.a + noise_color * dist_fog * m_noise_intensity));
+				/*float dither = frac(sin(wsPos.x + _Time.x) * 100000)  * step(length(wsPos.xz), m_distance_max) * step(m_distance_min, length(wsPos.xz)) * .01;*/
+				return lerp(orig_col, m_fog_color, saturate(fog * m_fog_color.a + noise_color * dist_fog * m_noise_intensity)) ;
 
 
 
