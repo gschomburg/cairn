@@ -118,8 +118,9 @@
 				// blend fog onto original color
 				noise_color += noise_mask_color;
 				/*float dither = frac(sin(wsPos.x + _Time.x) * 100000)  * step(length(wsPos.xz), m_distance_max) * step(m_distance_min, length(wsPos.xz)) * .01;*/
-				return lerp(orig_col, m_fog_color, saturate(fog * m_fog_color.a + noise_color * dist_fog * m_noise_intensity)) ;
-
+				fixed4 out_c = lerp(orig_col, m_fog_color, saturate(fog * m_fog_color.a + noise_color * dist_fog * m_noise_intensity)) ;
+				
+				return out_c;
 
 
 
