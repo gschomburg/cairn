@@ -112,7 +112,7 @@
 				// sample the textures
 				fixed4 orig_col = tex2D(_MainTex, i.uv);
 				fixed4 noise_color = texCUBE(m_noise_texture, mul(_noise_matrix, wsPos).xyz);
-				fixed4 noise_mask_color = texCUBE(m_noise_texture_mask, mul(_noise_matrix, wsPos).xyz);
+				fixed4 noise_mask_color = texCUBE(m_noise_texture_mask, mul(_noise_mask_matrix, wsPos).xyz);
 
 				// blend fog onto original color
 				noise_color += noise_mask_color;

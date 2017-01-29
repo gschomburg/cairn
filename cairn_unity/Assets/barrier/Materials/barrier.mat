@@ -147,7 +147,7 @@ Material:
       second: 1
     - first:
         name: _TextureContribution
-      second: 6.15
+      second: 78.5
     - first:
         name: _TexturePower
       second: 6.53
@@ -166,7 +166,7 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _RimColor
-      second: {r: 0.32585424, g: 0.8325909, b: 0.9044118, a: 1}
+      second: {r: 0.866, g: 0.17799996, b: 0.741, a: 1}
     - first:
         name: _ScrollSpeed1
       second: {r: 0, g: -0.1, b: 0, a: 0}
