@@ -40,9 +40,12 @@
 			float m_distance_min, m_distance_max, m_height_min, m_height_max;
 			float4 m_fog_color;
 			samplerCUBE m_noise_texture;
-			float4x4 m_noise_matrix;
+			samplerCUBE m_noise_texture_mask;
+
+
 			float m_noise_intensity;
-			
+			float m_noise_speed;
+
 			v2f vert (appdata v)
 			{
 				v2f o;
@@ -80,22 +83,40 @@
 				float3 wsPos = i.worldDirection * depth + _WorldSpaceCameraPos;
 
 
-
-
-
-
+				// calculate intensity of fog
 				float ground_fog = saturate(map(wsPos.y, m_height_min, m_height_max, 0, 1));
 				float dist_fog = saturate(map(length(wsPos.xz), m_distance_min, m_distance_max, 0, 1));
 				float fog = ground_fog * dist_fog;
 
 
-				fixed4 orig_col = tex2D(_MainTex, i.uv);
+				// animate noise texture
+				float r = _Time.y * m_noise_speed;
+				// stepped twist, makes noise move at same linear speed far away and near
+				/* r /=  floor(length(wsPos.xz) / 10) ;*/
 
-				fixed4 noise_color = texCUBE(m_noise_texture, mul(m_noise_matrix, wsPos).xyz);
-				/*return noise_color;*/
-				return lerp(orig_col, m_fog_color, min(fog * m_fog_color.a + noise_color.r * dist_fog * m_noise_intensity, 1.0));
-				/*return lerp(orig_col, m_fog_color, fog * m_fog_color.a);
-				return texture_color.r;*/
+				// first noise texture
+				float3x3 _noise_matrix = float3x3(
+					cos(r), 0, sin(r),
+					0, 1, 0,
+					-sin(r), 0, cos(r)
+					);
+
+
+				// second noise texture
+				float3x3 _noise_mask_matrix = float3x3(
+					cos(r* .5), 0, sin(r* .5),
+					0, 1, 0,
+					-sin(r* .5), 0, cos(r* .5)
+					);
+
+				// sample the textures
+				fixed4 orig_col = tex2D(_MainTex, i.uv);
+				fixed4 noise_color = texCUBE(m_noise_texture, mul(_noise_matrix, wsPos).xyz);
+				fixed4 noise_mask_color = texCUBE(m_noise_texture_mask, mul(_noise_matrix, wsPos).xyz);
+
+				// blend fog onto original color
+				noise_color += noise_mask_color;
+				return lerp(orig_col, m_fog_color, saturate(fog * m_fog_color.a + noise_color * dist_fog * m_noise_intensity));
 
 
 
@@ -109,31 +130,3 @@
 		}
 	}
 }
-
-
-/*fixed4 orig_col = tex2D(_MainTex, i.uv);
-
-
-float2 lV = wsPos.xz;
-
-float ground_fog = saturate(map(wsPos.y, 5, -.5, 0, 1));
-float dist_fog = saturate(map(length(lV), 5, 10, 0, 1));
-float fog = ground_fog * dist_fog;
-
-// noise
- fog -= frac(sin(wsPos.x) * 100000) * .05;
-
-
-
-
-fixed4 fogColor;
-fogColor.r = 0;
-fogColor.g = 0;
-fogColor.b = 0.5;
-fogColor.a = 1.0;
-
-//fixed4 noise;
-//noise.rgba = frac(sin(wsPos.x) * 100000);
-//return noise;
-
-return lerp(orig_col, fogColor, fog);// (col + orig_col) * .5;*/
