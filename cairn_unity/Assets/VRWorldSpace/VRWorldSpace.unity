@@ -4463,18 +4463,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c0195a29efdc49979c784b3183d097d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_camera: {fileID: 1211910249}
-  m_flip: 0
-  m_distance_min: 22.24
+  m_horizontal_flip: 0
+  m_fog_color: {r: 0.89705884, g: 0.8730493, b: 0.7585424, a: 1}
+  m_distance_min: 22.93
   m_distance_max: 75.8
   m_height_min: 26.31
   m_height_max: 5.88
-  m_fog_color: {r: 0.89705884, g: 0.8730493, b: 0.7585424, a: 1}
-  m_noise_texture: {fileID: 8900000, guid: 8ac6eb34f903742de84471a53de1ae5d, type: 3}
-  m_noise_texture_mask: {fileID: 8900000, guid: 8ac6eb34f903742de84471a53de1ae5d,
-    type: 3}
-  m_noise_speed: 0.05
-  m_noise_intensity: 0.5
+  m_primary_noise: {fileID: 8900000, guid: 8ac6eb34f903742de84471a53de1ae5d, type: 3}
+  m_secondary_noise: {fileID: 8900000, guid: 8ac6eb34f903742de84471a53de1ae5d, type: 3}
+  m_noise_speed: 4.61
+  m_noise_intensity: 0.78
 --- !u!114 &1211910245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4555,8 +4553,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1211910240}
-  m_LocalRotation: {x: 0.17981611, y: -0, z: -0, w: 0.9837003}
-  m_LocalPosition: {x: 0, y: 16.7, z: -40.2}
+  m_LocalRotation: {x: 0.031001784, y: 0.8463898, z: -0.049571805, w: 0.52934486}
+  m_LocalPosition: {x: -124.774864, y: 50.62764, z: 66.58591}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

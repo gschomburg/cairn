@@ -1,34 +1,57 @@
 using UnityEngine;
 using System.Collections;
 
+
 [ExecuteInEditMode]
+[RequireComponent(typeof(Camera))]
 public class VRWorldSpaceFogNoise : MonoBehaviour
 {
-	public Camera m_camera;
-	public bool m_flip;
 
-	public float m_distance_min = 0;
-	public float m_distance_max = 10;
-	public float m_height_min = 5;
-	public float m_height_max = 0;
-	public Color m_fog_color = new Color(1.0f, 0.0f, 0.0f);
-	public Cubemap m_noise_texture;
-	public Cubemap m_noise_texture_mask;
+	// device properties
+	[Header("Device Settings")]
+	[SerializeField][Tooltip("Flip the image horizontally?")]
+	public bool m_horizontal_flip;
 
-	public float m_noise_speed = 1;
-	public float m_noise_intensity = 1;
+	// global fog properties
+	[Header("Global Fog Settings")]
+	[SerializeField][Tooltip("Color of fog. Use alpha to control max strength.")]
+	private Color m_fog_color = new Color(1.0f, 0.0f, 0.0f);
+
+	// distance fog properties
+	[Header("Distance Fog Settings")]
+	[SerializeField][Tooltip("Distance from world center where fog should begin")]
+	private float m_distance_min = 0;
+	[SerializeField][Tooltip("Distance from world center where fog should reach max opacity")]
+	private float m_distance_max = 10;
+
+	// ground fog properties
+	[Header("Ground Fog Settings")]
+	[SerializeField][Tooltip("Altitude where fog should begin")]
+	private float m_height_min = 5;
+	[SerializeField][Tooltip("Altitude where fog should reach max opacity")]
+	private float m_height_max = 0;
+
+	// texture fog properties
+	[Header("Texture Fog Settings")]
+	[SerializeField]
+	private Cubemap m_primary_noise;
+	[SerializeField]
+	private Cubemap m_secondary_noise;
+	[SerializeField]
+	private float m_noise_speed = 1;
+	[SerializeField]
+	private float m_noise_intensity = 1;
 
 
-	private float m_rotation = 0;
-
-
-	private Material m_material;
+	private Camera m_camera;
 	private Shader m_shader;
+	private Material m_material;
 
 
 
 	void Awake ()
 	{
+		m_camera = GetComponent<Camera>();
 		m_shader = Shader.Find ("Hidden/VRWorldSpaceFogNoise");
 		m_material = new Material (m_shader);
 		Camera.main.depthTextureMode = DepthTextureMode.Depth;
@@ -37,22 +60,24 @@ public class VRWorldSpaceFogNoise : MonoBehaviour
 	[ImageEffectOpaque]
 	void OnRenderImage (RenderTexture source, RenderTexture dest)
 	{
-		m_material.SetFloat ("_flip", m_flip ? -1 : 1);
+		m_material.SetFloat ("_flip", m_horizontal_flip ? -1 : 1);
+
+		m_material.SetColor ("m_fog_color", m_fog_color);
+
 		m_material.SetFloat ("m_distance_min", m_distance_min);
 		m_material.SetFloat ("m_distance_max", m_distance_max);
+
 		m_material.SetFloat ("m_height_min", m_height_min);
 		m_material.SetFloat ("m_height_max", m_height_max);
-		m_material.SetColor ("m_fog_color", m_fog_color);
-		m_material.SetTexture ("m_noise_texture", m_noise_texture);
-		m_material.SetTexture ("m_noise_texture_mask", m_noise_texture_mask);
+
+		m_material.SetTexture ("m_primary_noise", m_primary_noise);
+		m_material.SetTexture ("m_secondary_noise", m_secondary_noise);
 		m_material.SetFloat ("m_noise_speed", m_noise_speed);
 		m_material.SetFloat ("m_noise_intensity", m_noise_intensity);
 
 		setClipToWorld ();
 
 		Graphics.Blit (source, dest, m_material);
-
-
 	}
 
 
@@ -68,6 +93,7 @@ public class VRWorldSpaceFogNoise : MonoBehaviour
 		// Undo some of the weird projection-y things so it's more intuitive to work with.
 		p [2, 3] = p [3, 2] = 0.0f;
 		p [3, 3] = 1.0f;
+
 
 		// I'll confess I don't understand entirely why this is right,
 		// I just kept fiddling with numbers until it worked.

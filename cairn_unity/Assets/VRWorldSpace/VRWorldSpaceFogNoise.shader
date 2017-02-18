@@ -6,9 +6,7 @@
 	}
 	SubShader
 	{
-		// No culling or depth
 		Cull Off ZWrite Off ZTest Always
-
 
 		Pass
 		{
@@ -38,12 +36,11 @@
 			float _flip;
 			float4x4 _ClipToWorld;
 
-			float m_distance_min, m_distance_max, m_height_min, m_height_max;
 			float4 m_fog_color;
-			samplerCUBE m_noise_texture;
-			samplerCUBE m_noise_texture_mask;
-
-
+			float m_distance_min, m_distance_max;
+			float m_height_min, m_height_max;
+			samplerCUBE m_primary_noise;
+			samplerCUBE m_secondary_noise;
 			float m_noise_intensity;
 			float m_noise_speed;
 
@@ -59,7 +56,7 @@
 				// Construct a vector on the Z = 0 plane corresponding to our screenspace location.
 				float4 clip = float4((v.uv.xy * 2.0f - 1.0f) * float2(1, _flip), 0.0f, 1.0f);
 				// Use matrix computed in script to convert to worldspace.
-				o.worldDirection = mul(_ClipToWorld, clip) -_WorldSpaceCameraPos;
+				o.worldDirection = mul(_ClipToWorld, clip) - _WorldSpaceCameraPos;
 
 				// UV passthrough.
 				// Flipped Y may be a platform-specific difference - check OpenGL version.
@@ -96,7 +93,7 @@
 				/* r /=  floor(length(wsPos.xz) / 10) ;*/
 
 				// first noise texture
-				float3x3 _noise_matrix = float3x3(
+				float3x3 primary_noise_matrix = float3x3(
 					cos(r), 0, sin(r),
 					0, 1, 0,
 					-sin(r), 0, cos(r)
@@ -104,26 +101,23 @@
 
 
 				// second noise texture
-				float3x3 _noise_mask_matrix = float3x3(
-					cos(r* .5), 0, sin(r* .5),
+				float3x3 secondary_noise_matrix = float3x3(
+					cos(r * .5), 0, sin(r * .5),
 					0, 1, 0,
-					-sin(r* .5), 0, cos(r* .5)
+					-sin(r * .5), 0, cos(r * .5)
 					);
 
 				// sample the textures
 				fixed4 orig_col = tex2D(_MainTex, i.uv);
-				fixed4 noise_color = texCUBE(m_noise_texture, mul(_noise_matrix, wsPos).xyz);
-				fixed4 noise_mask_color = texCUBE(m_noise_texture_mask, mul(_noise_mask_matrix, wsPos).xyz);
+				fixed4 primary_noise_color = texCUBE(m_primary_noise, mul(primary_noise_matrix, wsPos).xyz);
+				fixed4 secondary_color_color = texCUBE(m_secondary_noise, mul(secondary_noise_matrix, wsPos).xyz);
 
-				// blend fog onto original color
-				noise_color += noise_mask_color;
+				fixed4 noise_color = primary_noise_color + secondary_color_color;
+
 				/*float dither = frac(sin(wsPos.x + _Time.x) * 100000)  * step(length(wsPos.xz), m_distance_max) * step(m_distance_min, length(wsPos.xz)) * .01;*/
 				fixed4 out_c = lerp(orig_col, m_fog_color, saturate(fog * m_fog_color.a + noise_color * dist_fog * m_noise_intensity)) ;
-				
+
 				return out_c;
-
-
-
 			}
 
 
