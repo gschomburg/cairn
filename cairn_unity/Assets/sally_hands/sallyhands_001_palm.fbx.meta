@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: a7d246cdbdef1c343ab4bffaa7e9313c
+timeCreated: 1487486217
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: sally-hands-001_left.001_cell
+    100002: sally-hands-001_left.001_cell.001
+    100004: sally-hands-001_left.001_cell.002
+    100006: sally-hands-001_left.001_cell.003
+    100008: sally-hands-001_left.001_cell.004
+    100010: sally-hands-001_left.001_cell.005
+    100012: sally-hands-001_left.001_cell.006
+    100014: sally-hands-001_left.001_cell.007
+    100016: sally-hands-001_left.001_cell.008
+    100018: sally-hands-001_left.001_cell.009
+    100020: sally-hands-001_left.001_cell.010
+    100022: sally-hands-001_left.001_cell.011
+    100024: sally-hands-001_left.001_cell.012
+    100026: sally-hands-001_left.001_cell.013
+    100028: sally-hands-001_left.001_cell.014
+    100030: sally-hands-001_left.001_cell.015
+    100032: sally-hands-001_left.001_cell.016
+    100034: sally-hands-001_left.001_cell.017
+    100036: sally-hands-001_left.001_cell.018
+    100038: //RootNode
+    400000: sally-hands-001_left.001_cell
+    400002: sally-hands-001_left.001_cell.001
+    400004: sally-hands-001_left.001_cell.002
+    400006: sally-hands-001_left.001_cell.003
+    400008: sally-hands-001_left.001_cell.004
+    400010: sally-hands-001_left.001_cell.005
+    400012: sally-hands-001_left.001_cell.006
+    400014: sally-hands-001_left.001_cell.007
+    400016: sally-hands-001_left.001_cell.008
+    400018: sally-hands-001_left.001_cell.009
+    400020: sally-hands-001_left.001_cell.010
+    400022: sally-hands-001_left.001_cell.011
+    400024: sally-hands-001_left.001_cell.012
+    400026: sally-hands-001_left.001_cell.013
+    400028: sally-hands-001_left.001_cell.014
+    400030: sally-hands-001_left.001_cell.015
+    400032: sally-hands-001_left.001_cell.016
+    400034: sally-hands-001_left.001_cell.017
+    400036: sally-hands-001_left.001_cell.018
+    400038: //RootNode
+    2300000: sally-hands-001_left.001_cell
+    2300002: sally-hands-001_left.001_cell.001
+    2300004: sally-hands-001_left.001_cell.002
+    2300006: sally-hands-001_left.001_cell.003
+    2300008: sally-hands-001_left.001_cell.004
+    2300010: sally-hands-001_left.001_cell.005
+    2300012: sally-hands-001_left.001_cell.006
+    2300014: sally-hands-001_left.001_cell.007
+    2300016: sally-hands-001_left.001_cell.008
+    2300018: sally-hands-001_left.001_cell.009
+    2300020: sally-hands-001_left.001_cell.010
+    2300022: sally-hands-001_left.001_cell.011
+    2300024: sally-hands-001_left.001_cell.012
+    2300026: sally-hands-001_left.001_cell.013
+    2300028: sally-hands-001_left.001_cell.014
+    2300030: sally-hands-001_left.001_cell.015
+    2300032: sally-hands-001_left.001_cell.016
+    2300034: sally-hands-001_left.001_cell.017
+    2300036: sally-hands-001_left.001_cell.018
+    3300000: sally-hands-001_left.001_cell
+    3300002: sally-hands-001_left.001_cell.001
+    3300004: sally-hands-001_left.001_cell.002
+    3300006: sally-hands-001_left.001_cell.003
+    3300008: sally-hands-001_left.001_cell.004
+    3300010: sally-hands-001_left.001_cell.005
+    3300012: sally-hands-001_left.001_cell.006
+    3300014: sally-hands-001_left.001_cell.007
+    3300016: sally-hands-001_left.001_cell.008
+    3300018: sally-hands-001_left.001_cell.009
+    3300020: sally-hands-001_left.001_cell.010
+    3300022: sally-hands-001_left.001_cell.011
+    3300024: sally-hands-001_left.001_cell.012
+    3300026: sally-hands-001_left.001_cell.013
+    3300028: sally-hands-001_left.001_cell.014
+    3300030: sally-hands-001_left.001_cell.015
+    3300032: sally-hands-001_left.001_cell.016
+    3300034: sally-hands-001_left.001_cell.017
+    3300036: sally-hands-001_left.001_cell.018
+    4300000: sally-hands-001_left.001_cell.018
+    4300002: sally-hands-001_left.001_cell.017
+    4300004: sally-hands-001_left.001_cell.016
+    4300006: sally-hands-001_left.001_cell.015
+    4300008: sally-hands-001_left.001_cell.014
+    4300010: sally-hands-001_left.001_cell.013
+    4300012: sally-hands-001_left.001_cell.012
+    4300014: sally-hands-001_left.001_cell.011
+    4300016: sally-hands-001_left.001_cell.010
+    4300018: sally-hands-001_left.001_cell.009
+    4300020: sally-hands-001_left.001_cell.008
+    4300022: sally-hands-001_left.001_cell.007
+    4300024: sally-hands-001_left.001_cell.006
+    4300026: sally-hands-001_left.001_cell.005
+    4300028: sally-hands-001_left.001_cell.004
+    4300030: sally-hands-001_left.001_cell.003
+    4300032: sally-hands-001_left.001_cell.002
+    4300034: sally-hands-001_left.001_cell.001
+    4300036: sally-hands-001_left.001_cell
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
