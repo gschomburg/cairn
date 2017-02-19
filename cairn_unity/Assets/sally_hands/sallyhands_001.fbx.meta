@@ -21,6 +21,7 @@ ModelImporter:
     100026: finger_thumb.1
     100028: finger_thunb.2
     100030: finger_thunb.2_end
+    100032: sally-hands-001_left
     400000: //RootNode
     400002: Cube
     400004: sally-hands-001_right
@@ -37,6 +38,7 @@ ModelImporter:
     400026: finger_thumb.1
     400028: finger_thunb.2
     400030: finger_thunb.2_end
+    400032: sally-hands-001_left
     2300000: //RootNode
     2300002: Cube
     2300004: sally-hands-001_right
@@ -45,11 +47,21 @@ ModelImporter:
     3300004: sally-hands-001_right
     4300000: sally-hands-001_right
     4300002: Cube
+    4300004: sally-hands-001_left
     7400000: Armature|grab
     7400002: Armature|pinch
     7400004: Armature|rest
+    7400006: hand_armature_r|grab
+    7400008: hand_armature_r|pinch
+    7400010: hand_armature_r|rest
+    7400012: hand_armature_r|rest.001
+    7400014: hand_armature_l|grab
+    7400016: hand_armature_l|pinch
+    7400018: hand_armature_l|rest
+    7400020: hand_armature_l|rest.001
     9500000: //RootNode
     13700000: sally-hands-001_right
+    13700002: sally-hands-001_left
   materials:
     importMaterials: 1
     materialName: 0
@@ -72,8 +84,8 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|grab
-      takeName: Armature|grab
+      name: hand_armature_l|grab
+      takeName: hand_armature_l|grab
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -98,31 +110,71 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: Armature
+      - path: hand_armature_l
         weight: 1
-      - path: Armature/finger_index.1
+      - path: hand_armature_l/finger_index.1
         weight: 1
-      - path: Armature/finger_index.1/finger_index.2
+      - path: hand_armature_l/finger_index.1/finger_index.2
         weight: 1
-      - path: Armature/finger_index.1/finger_index.2/finger_index.2_end
+      - path: hand_armature_l/finger_index.1/finger_index.2/finger_index.2_end
         weight: 1
-      - path: Armature/finger_middle.1
+      - path: hand_armature_l/finger_middle.1
         weight: 1
-      - path: Armature/finger_middle.1/finger_middle.2
+      - path: hand_armature_l/finger_middle.1/finger_middle.2
         weight: 1
-      - path: Armature/finger_middle.1/finger_middle.2/finger_middle.2_end
+      - path: hand_armature_l/finger_middle.1/finger_middle.2/finger_middle.2_end
         weight: 1
-      - path: Armature/finger_pinky.1
+      - path: hand_armature_l/finger_pinky.1
         weight: 1
-      - path: Armature/finger_pinky.1/finger_pinky.2
+      - path: hand_armature_l/finger_pinky.1/finger_pinky.2
         weight: 1
-      - path: Armature/finger_pinky.1/finger_pinky.2/finger_pinky.2_end
+      - path: hand_armature_l/finger_pinky.1/finger_pinky.2/finger_pinky.2_end
         weight: 1
-      - path: Armature/finger_thumb.1
+      - path: hand_armature_l/finger_thumb.1
         weight: 1
-      - path: Armature/finger_thumb.1/finger_thunb.2
+      - path: hand_armature_l/finger_thumb.1/finger_thunb.2
         weight: 1
-      - path: Armature/finger_thumb.1/finger_thunb.2/finger_thunb.2_end
+      - path: hand_armature_l/finger_thumb.1/finger_thunb.2/finger_thunb.2_end
+        weight: 1
+      - path: hand_armature_l/palm
+        weight: 1
+      - path: hand_armature_l/palm/palm_end
+        weight: 1
+      - path: sally-hands-001_left
+        weight: 1
+      - path: hand_armature_r
+        weight: 1
+      - path: hand_armature_r/finger_index.1 1
+        weight: 1
+      - path: hand_armature_r/finger_index.1 1/finger_index.2 1
+        weight: 1
+      - path: hand_armature_r/finger_index.1 1/finger_index.2 1/finger_index.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/finger_middle.1 1
+        weight: 1
+      - path: hand_armature_r/finger_middle.1 1/finger_middle.2 1
+        weight: 1
+      - path: hand_armature_r/finger_middle.1 1/finger_middle.2 1/finger_middle.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/finger_pinky.1 1
+        weight: 1
+      - path: hand_armature_r/finger_pinky.1 1/finger_pinky.2 1
+        weight: 1
+      - path: hand_armature_r/finger_pinky.1 1/finger_pinky.2 1/finger_pinky.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/finger_thumb.1 1
+        weight: 1
+      - path: hand_armature_r/finger_thumb.1 1/finger_thunb.2 1
+        weight: 1
+      - path: hand_armature_r/finger_thumb.1 1/finger_thunb.2 1/finger_thunb.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/palm 1
+        weight: 1
+      - path: hand_armature_r/palm 1/palm_end 1
         weight: 1
       - path: sally-hands-001_right
         weight: 1
@@ -130,10 +182,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|pinch
-      takeName: Armature|pinch
+      name: hand_armature_l|pinch
+      takeName: hand_armature_l|pinch
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 2
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -156,31 +208,71 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: Armature
+      - path: hand_armature_l
         weight: 1
-      - path: Armature/finger_index.1
+      - path: hand_armature_l/finger_index.1
         weight: 1
-      - path: Armature/finger_index.1/finger_index.2
+      - path: hand_armature_l/finger_index.1/finger_index.2
         weight: 1
-      - path: Armature/finger_index.1/finger_index.2/finger_index.2_end
+      - path: hand_armature_l/finger_index.1/finger_index.2/finger_index.2_end
         weight: 1
-      - path: Armature/finger_middle.1
+      - path: hand_armature_l/finger_middle.1
         weight: 1
-      - path: Armature/finger_middle.1/finger_middle.2
+      - path: hand_armature_l/finger_middle.1/finger_middle.2
         weight: 1
-      - path: Armature/finger_middle.1/finger_middle.2/finger_middle.2_end
+      - path: hand_armature_l/finger_middle.1/finger_middle.2/finger_middle.2_end
         weight: 1
-      - path: Armature/finger_pinky.1
+      - path: hand_armature_l/finger_pinky.1
         weight: 1
-      - path: Armature/finger_pinky.1/finger_pinky.2
+      - path: hand_armature_l/finger_pinky.1/finger_pinky.2
         weight: 1
-      - path: Armature/finger_pinky.1/finger_pinky.2/finger_pinky.2_end
+      - path: hand_armature_l/finger_pinky.1/finger_pinky.2/finger_pinky.2_end
         weight: 1
-      - path: Armature/finger_thumb.1
+      - path: hand_armature_l/finger_thumb.1
         weight: 1
-      - path: Armature/finger_thumb.1/finger_thunb.2
+      - path: hand_armature_l/finger_thumb.1/finger_thunb.2
         weight: 1
-      - path: Armature/finger_thumb.1/finger_thunb.2/finger_thunb.2_end
+      - path: hand_armature_l/finger_thumb.1/finger_thunb.2/finger_thunb.2_end
+        weight: 1
+      - path: hand_armature_l/palm
+        weight: 1
+      - path: hand_armature_l/palm/palm_end
+        weight: 1
+      - path: sally-hands-001_left
+        weight: 1
+      - path: hand_armature_r
+        weight: 1
+      - path: hand_armature_r/finger_index.1 1
+        weight: 1
+      - path: hand_armature_r/finger_index.1 1/finger_index.2 1
+        weight: 1
+      - path: hand_armature_r/finger_index.1 1/finger_index.2 1/finger_index.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/finger_middle.1 1
+        weight: 1
+      - path: hand_armature_r/finger_middle.1 1/finger_middle.2 1
+        weight: 1
+      - path: hand_armature_r/finger_middle.1 1/finger_middle.2 1/finger_middle.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/finger_pinky.1 1
+        weight: 1
+      - path: hand_armature_r/finger_pinky.1 1/finger_pinky.2 1
+        weight: 1
+      - path: hand_armature_r/finger_pinky.1 1/finger_pinky.2 1/finger_pinky.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/finger_thumb.1 1
+        weight: 1
+      - path: hand_armature_r/finger_thumb.1 1/finger_thunb.2 1
+        weight: 1
+      - path: hand_armature_r/finger_thumb.1 1/finger_thunb.2 1/finger_thunb.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/palm 1
+        weight: 1
+      - path: hand_armature_r/palm 1/palm_end 1
         weight: 1
       - path: sally-hands-001_right
         weight: 1
@@ -188,8 +280,106 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|rest
-      takeName: Armature|rest
+      name: hand_armature_l|rest
+      takeName: hand_armature_l|rest
+      firstFrame: 0
+      lastFrame: 2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: hand_armature_l
+        weight: 1
+      - path: hand_armature_l/finger_index.1
+        weight: 1
+      - path: hand_armature_l/finger_index.1/finger_index.2
+        weight: 1
+      - path: hand_armature_l/finger_index.1/finger_index.2/finger_index.2_end
+        weight: 1
+      - path: hand_armature_l/finger_middle.1
+        weight: 1
+      - path: hand_armature_l/finger_middle.1/finger_middle.2
+        weight: 1
+      - path: hand_armature_l/finger_middle.1/finger_middle.2/finger_middle.2_end
+        weight: 1
+      - path: hand_armature_l/finger_pinky.1
+        weight: 1
+      - path: hand_armature_l/finger_pinky.1/finger_pinky.2
+        weight: 1
+      - path: hand_armature_l/finger_pinky.1/finger_pinky.2/finger_pinky.2_end
+        weight: 1
+      - path: hand_armature_l/finger_thumb.1
+        weight: 1
+      - path: hand_armature_l/finger_thumb.1/finger_thunb.2
+        weight: 1
+      - path: hand_armature_l/finger_thumb.1/finger_thunb.2/finger_thunb.2_end
+        weight: 1
+      - path: hand_armature_l/palm
+        weight: 1
+      - path: hand_armature_l/palm/palm_end
+        weight: 1
+      - path: sally-hands-001_left
+        weight: 1
+      - path: hand_armature_r
+        weight: 1
+      - path: hand_armature_r/finger_index.1 1
+        weight: 1
+      - path: hand_armature_r/finger_index.1 1/finger_index.2 1
+        weight: 1
+      - path: hand_armature_r/finger_index.1 1/finger_index.2 1/finger_index.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/finger_middle.1 1
+        weight: 1
+      - path: hand_armature_r/finger_middle.1 1/finger_middle.2 1
+        weight: 1
+      - path: hand_armature_r/finger_middle.1 1/finger_middle.2 1/finger_middle.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/finger_pinky.1 1
+        weight: 1
+      - path: hand_armature_r/finger_pinky.1 1/finger_pinky.2 1
+        weight: 1
+      - path: hand_armature_r/finger_pinky.1 1/finger_pinky.2 1/finger_pinky.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/finger_thumb.1 1
+        weight: 1
+      - path: hand_armature_r/finger_thumb.1 1/finger_thunb.2 1
+        weight: 1
+      - path: hand_armature_r/finger_thumb.1 1/finger_thunb.2 1/finger_thunb.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/palm 1
+        weight: 1
+      - path: hand_armature_r/palm 1/palm_end 1
+        weight: 1
+      - path: sally-hands-001_right
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hand_armature_r|grab
+      takeName: hand_armature_r|grab
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -214,31 +404,267 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: Armature
+      - path: hand_armature_l
         weight: 1
-      - path: Armature/finger_index.1
+      - path: hand_armature_l/finger_index.1
         weight: 1
-      - path: Armature/finger_index.1/finger_index.2
+      - path: hand_armature_l/finger_index.1/finger_index.2
         weight: 1
-      - path: Armature/finger_index.1/finger_index.2/finger_index.2_end
+      - path: hand_armature_l/finger_index.1/finger_index.2/finger_index.2_end
         weight: 1
-      - path: Armature/finger_middle.1
+      - path: hand_armature_l/finger_middle.1
         weight: 1
-      - path: Armature/finger_middle.1/finger_middle.2
+      - path: hand_armature_l/finger_middle.1/finger_middle.2
         weight: 1
-      - path: Armature/finger_middle.1/finger_middle.2/finger_middle.2_end
+      - path: hand_armature_l/finger_middle.1/finger_middle.2/finger_middle.2_end
         weight: 1
-      - path: Armature/finger_pinky.1
+      - path: hand_armature_l/finger_pinky.1
         weight: 1
-      - path: Armature/finger_pinky.1/finger_pinky.2
+      - path: hand_armature_l/finger_pinky.1/finger_pinky.2
         weight: 1
-      - path: Armature/finger_pinky.1/finger_pinky.2/finger_pinky.2_end
+      - path: hand_armature_l/finger_pinky.1/finger_pinky.2/finger_pinky.2_end
         weight: 1
-      - path: Armature/finger_thumb.1
+      - path: hand_armature_l/finger_thumb.1
         weight: 1
-      - path: Armature/finger_thumb.1/finger_thunb.2
+      - path: hand_armature_l/finger_thumb.1/finger_thunb.2
         weight: 1
-      - path: Armature/finger_thumb.1/finger_thunb.2/finger_thunb.2_end
+      - path: hand_armature_l/finger_thumb.1/finger_thunb.2/finger_thunb.2_end
+        weight: 1
+      - path: hand_armature_l/palm
+        weight: 1
+      - path: hand_armature_l/palm/palm_end
+        weight: 1
+      - path: sally-hands-001_left
+        weight: 1
+      - path: hand_armature_r
+        weight: 1
+      - path: hand_armature_r/finger_index.1 1
+        weight: 1
+      - path: hand_armature_r/finger_index.1 1/finger_index.2 1
+        weight: 1
+      - path: hand_armature_r/finger_index.1 1/finger_index.2 1/finger_index.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/finger_middle.1 1
+        weight: 1
+      - path: hand_armature_r/finger_middle.1 1/finger_middle.2 1
+        weight: 1
+      - path: hand_armature_r/finger_middle.1 1/finger_middle.2 1/finger_middle.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/finger_pinky.1 1
+        weight: 1
+      - path: hand_armature_r/finger_pinky.1 1/finger_pinky.2 1
+        weight: 1
+      - path: hand_armature_r/finger_pinky.1 1/finger_pinky.2 1/finger_pinky.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/finger_thumb.1 1
+        weight: 1
+      - path: hand_armature_r/finger_thumb.1 1/finger_thunb.2 1
+        weight: 1
+      - path: hand_armature_r/finger_thumb.1 1/finger_thunb.2 1/finger_thunb.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/palm 1
+        weight: 1
+      - path: hand_armature_r/palm 1/palm_end 1
+        weight: 1
+      - path: sally-hands-001_right
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hand_armature_r|pinch
+      takeName: hand_armature_r|pinch
+      firstFrame: 0
+      lastFrame: 2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: hand_armature_l
+        weight: 1
+      - path: hand_armature_l/finger_index.1
+        weight: 1
+      - path: hand_armature_l/finger_index.1/finger_index.2
+        weight: 1
+      - path: hand_armature_l/finger_index.1/finger_index.2/finger_index.2_end
+        weight: 1
+      - path: hand_armature_l/finger_middle.1
+        weight: 1
+      - path: hand_armature_l/finger_middle.1/finger_middle.2
+        weight: 1
+      - path: hand_armature_l/finger_middle.1/finger_middle.2/finger_middle.2_end
+        weight: 1
+      - path: hand_armature_l/finger_pinky.1
+        weight: 1
+      - path: hand_armature_l/finger_pinky.1/finger_pinky.2
+        weight: 1
+      - path: hand_armature_l/finger_pinky.1/finger_pinky.2/finger_pinky.2_end
+        weight: 1
+      - path: hand_armature_l/finger_thumb.1
+        weight: 1
+      - path: hand_armature_l/finger_thumb.1/finger_thunb.2
+        weight: 1
+      - path: hand_armature_l/finger_thumb.1/finger_thunb.2/finger_thunb.2_end
+        weight: 1
+      - path: hand_armature_l/palm
+        weight: 1
+      - path: hand_armature_l/palm/palm_end
+        weight: 1
+      - path: sally-hands-001_left
+        weight: 1
+      - path: hand_armature_r
+        weight: 1
+      - path: hand_armature_r/finger_index.1 1
+        weight: 1
+      - path: hand_armature_r/finger_index.1 1/finger_index.2 1
+        weight: 1
+      - path: hand_armature_r/finger_index.1 1/finger_index.2 1/finger_index.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/finger_middle.1 1
+        weight: 1
+      - path: hand_armature_r/finger_middle.1 1/finger_middle.2 1
+        weight: 1
+      - path: hand_armature_r/finger_middle.1 1/finger_middle.2 1/finger_middle.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/finger_pinky.1 1
+        weight: 1
+      - path: hand_armature_r/finger_pinky.1 1/finger_pinky.2 1
+        weight: 1
+      - path: hand_armature_r/finger_pinky.1 1/finger_pinky.2 1/finger_pinky.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/finger_thumb.1 1
+        weight: 1
+      - path: hand_armature_r/finger_thumb.1 1/finger_thunb.2 1
+        weight: 1
+      - path: hand_armature_r/finger_thumb.1 1/finger_thunb.2 1/finger_thunb.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/palm 1
+        weight: 1
+      - path: hand_armature_r/palm 1/palm_end 1
+        weight: 1
+      - path: sally-hands-001_right
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hand_armature_r|rest
+      takeName: hand_armature_r|rest
+      firstFrame: 0
+      lastFrame: 2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: hand_armature_l
+        weight: 1
+      - path: hand_armature_l/finger_index.1
+        weight: 1
+      - path: hand_armature_l/finger_index.1/finger_index.2
+        weight: 1
+      - path: hand_armature_l/finger_index.1/finger_index.2/finger_index.2_end
+        weight: 1
+      - path: hand_armature_l/finger_middle.1
+        weight: 1
+      - path: hand_armature_l/finger_middle.1/finger_middle.2
+        weight: 1
+      - path: hand_armature_l/finger_middle.1/finger_middle.2/finger_middle.2_end
+        weight: 1
+      - path: hand_armature_l/finger_pinky.1
+        weight: 1
+      - path: hand_armature_l/finger_pinky.1/finger_pinky.2
+        weight: 1
+      - path: hand_armature_l/finger_pinky.1/finger_pinky.2/finger_pinky.2_end
+        weight: 1
+      - path: hand_armature_l/finger_thumb.1
+        weight: 1
+      - path: hand_armature_l/finger_thumb.1/finger_thunb.2
+        weight: 1
+      - path: hand_armature_l/finger_thumb.1/finger_thunb.2/finger_thunb.2_end
+        weight: 1
+      - path: hand_armature_l/palm
+        weight: 1
+      - path: hand_armature_l/palm/palm_end
+        weight: 1
+      - path: sally-hands-001_left
+        weight: 1
+      - path: hand_armature_r
+        weight: 1
+      - path: hand_armature_r/finger_index.1 1
+        weight: 1
+      - path: hand_armature_r/finger_index.1 1/finger_index.2 1
+        weight: 1
+      - path: hand_armature_r/finger_index.1 1/finger_index.2 1/finger_index.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/finger_middle.1 1
+        weight: 1
+      - path: hand_armature_r/finger_middle.1 1/finger_middle.2 1
+        weight: 1
+      - path: hand_armature_r/finger_middle.1 1/finger_middle.2 1/finger_middle.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/finger_pinky.1 1
+        weight: 1
+      - path: hand_armature_r/finger_pinky.1 1/finger_pinky.2 1
+        weight: 1
+      - path: hand_armature_r/finger_pinky.1 1/finger_pinky.2 1/finger_pinky.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/finger_thumb.1 1
+        weight: 1
+      - path: hand_armature_r/finger_thumb.1 1/finger_thunb.2 1
+        weight: 1
+      - path: hand_armature_r/finger_thumb.1 1/finger_thunb.2 1/finger_thunb.2_end
+          1
+        weight: 1
+      - path: hand_armature_r/palm 1
+        weight: 1
+      - path: hand_armature_r/palm 1/palm_end 1
         weight: 1
       - path: sally-hands-001_right
         weight: 1

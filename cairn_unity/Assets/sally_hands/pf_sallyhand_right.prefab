@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4412261851721696}
   - component: {fileID: 95610085762848058}
-  - component: {fileID: 114386154417792346}
   - component: {fileID: 114268541176517442}
   - component: {fileID: 65188986981994896}
   m_Layer: 0
@@ -40,7 +39,7 @@ GameObject:
   - component: {fileID: 4795513004201604}
   - component: {fileID: 137069062827352292}
   m_Layer: 0
-  m_Name: sally-hands-001_right
+  m_Name: sally-hands-001_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,15 +80,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1292128580315878}
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalRotation: {x: 0.46174863, y: 0, z: 0, w: 0.8870109}
   m_LocalPosition: {x: 0.022200005, y: 0, z: -0.026599996}
-  m_LocalScale: {x: 0.20000012, y: 0.20000017, z: 0.20000008}
+  m_LocalScale: {x: 0.2, y: 0.20000002, z: 0.20000002}
   m_Children:
   - {fileID: 4242421269079446}
   - {fileID: 4795513004201604}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 55, y: 0, z: 0}
 --- !u!4 &4795513004201604
 Transform:
   m_ObjectHideFlags: 1
@@ -139,7 +138,7 @@ Animator:
   m_GameObject: {fileID: 1292128580315878}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 5ac09c47c4e879a458dea111e7c2804c, type: 3}
-  m_Controller: {fileID: 9100000, guid: 2c50c9fa443b17548a2d56406989f7e1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5738f3eda860bd443a1462275257fb36, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -163,20 +162,7 @@ MonoBehaviour:
   pinching: 0
   pinchOnGrabObjects:
   - {fileID: 0}
-  hand: 0
---- !u!114 &114386154417792346
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1292128580315878}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eaae21f44aff4947943aaefcba3749a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabVal: 0
-  pinchVal: 0
+  hand: 1
 --- !u!137 &137069062827352292
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -212,7 +198,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: 5ac09c47c4e879a458dea111e7c2804c, type: 3}
+  m_Mesh: {fileID: 4300004, guid: 5ac09c47c4e879a458dea111e7c2804c, type: 3}
   m_Bones: []
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
