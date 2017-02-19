@@ -6,57 +6,48 @@ PluginImporter:
   iconMap: {}
   executionOrder: {}
   isPreloaded: 0
+  isOverridable: 0
   platformData:
-    Android:
-      enabled: 0
-      settings:
-	CPU: AnyCPU
     Any:
-      enabled: 0
+      enabled: 1
       settings: {}
     Editor:
-      enabled: 1
+      enabled: 0
       settings:
-	CPU: x86_64
-	DefaultValueInitialized: true
-	OS: OSX
+        CPU: x86_64
+        DefaultValueInitialized: true
     Linux:
       enabled: 0
       settings:
-	CPU: None
+        CPU: None
     Linux64:
       enabled: 1
       settings:
-	CPU: x86_64
+        CPU: x86_64
     LinuxUniversal:
-      enabled: 0
+      enabled: 1
       settings:
-	CPU: x86_64
+        CPU: x86_64
     OSXIntel:
       enabled: 0
       settings:
-	CPU: None
+        CPU: None
     OSXIntel64:
       enabled: 1
       settings:
-	CPU: AnyCPU
+        CPU: AnyCPU
     OSXUniversal:
       enabled: 0
       settings:
-	CPU: x86_64
+        CPU: x86_64
     Win:
       enabled: 0
       settings:
-	CPU: None
+        CPU: None
     Win64:
       enabled: 1
       settings:
-	CPU: AnyCPU
-    iOS:
-      enabled: 0
-      settings:
-	CompileFlags:
-	FrameworkDependencies:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+        CPU: AnyCPU
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
