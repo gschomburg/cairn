@@ -20,7 +20,7 @@ public class RockSlide : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//positionOffset = transform.position - target.position;
-		positionOffset = Random.onUnitSphere * 1.0f;
+		positionOffset = Random.onUnitSphere * .10f;
 
 		follow_speed *= Random.value + .3f;
 		rb = GetComponent<Rigidbody>();
