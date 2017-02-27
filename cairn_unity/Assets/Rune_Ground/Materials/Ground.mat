@@ -16,112 +16,112 @@ Material:
     serializedVersion: 2
     m_TexEnvs:
     - first:
-	name: _BumpMap
+        name: _BumpMap
       second:
-	m_Texture: {fileID: 2800000, guid: 9a56988667ae14d428e8d4b40333fcc5, type: 3}
-	m_Scale: {x: 1, y: 1}
-	m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: 9a56988667ae14d428e8d4b40333fcc5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - first:
-	name: _DetailAlbedoMap
+        name: _DetailAlbedoMap
       second:
-	m_Texture: {fileID: 0}
-	m_Scale: {x: 1, y: 1}
-	m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - first:
-	name: _DetailMask
+        name: _DetailMask
       second:
-	m_Texture: {fileID: 0}
-	m_Scale: {x: 1, y: 1}
-	m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - first:
-	name: _DetailNormalMap
+        name: _DetailNormalMap
       second:
-	m_Texture: {fileID: 0}
-	m_Scale: {x: 1, y: 1}
-	m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - first:
-	name: _EmissionMap
+        name: _EmissionMap
       second:
-	m_Texture: {fileID: 0}
-	m_Scale: {x: 1, y: 1}
-	m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - first:
-	name: _MainTex
+        name: _MainTex
       second:
-	m_Texture: {fileID: 2800000, guid: 84983588d20f048d58ec3752655719d3, type: 3}
-	m_Scale: {x: 1, y: 1}
-	m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: 84983588d20f048d58ec3752655719d3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - first:
-	name: _MetallicGlossMap
+        name: _MetallicGlossMap
       second:
-	m_Texture: {fileID: 2800000, guid: 4755a60802c5f488b92e187ab0cfa7d2, type: 3}
-	m_Scale: {x: 1, y: 1}
-	m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: 4755a60802c5f488b92e187ab0cfa7d2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - first:
-	name: _OcclusionMap
+        name: _OcclusionMap
       second:
-	m_Texture: {fileID: 0}
-	m_Scale: {x: 1, y: 1}
-	m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - first:
-	name: _ParallaxMap
+        name: _ParallaxMap
       second:
-	m_Texture: {fileID: 0}
-	m_Scale: {x: 1, y: 1}
-	m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
-	name: _BumpScale
+        name: _BumpScale
       second: 1
     - first:
-	name: _Cutoff
+        name: _Cutoff
       second: 0.5
     - first:
-	name: _DetailNormalMapScale
+        name: _DetailNormalMapScale
       second: 1
     - first:
-	name: _DstBlend
+        name: _DstBlend
       second: 0
     - first:
-	name: _GlossMapScale
+        name: _GlossMapScale
       second: 1
     - first:
-	name: _Glossiness
+        name: _Glossiness
       second: 0.5
     - first:
-	name: _GlossyReflections
+        name: _GlossyReflections
       second: 1
     - first:
-	name: _Metallic
+        name: _Metallic
       second: 0
     - first:
-	name: _Mode
+        name: _Mode
       second: 0
     - first:
-	name: _OcclusionStrength
+        name: _OcclusionStrength
       second: 1
     - first:
-	name: _Parallax
+        name: _Parallax
       second: 0.02
     - first:
-	name: _SmoothnessTextureChannel
+        name: _SmoothnessTextureChannel
       second: 0
     - first:
-	name: _SpecularHighlights
+        name: _SpecularHighlights
       second: 1
     - first:
-	name: _SrcBlend
+        name: _SrcBlend
       second: 1
     - first:
-	name: _UVSec
+        name: _UVSec
       second: 0
     - first:
-	name: _ZWrite
+        name: _ZWrite
       second: 1
     m_Colors:
     - first:
-	name: _Color
+        name: _Color
       second: {r: 1, g: 1, b: 1, a: 1}
     - first:
-	name: _EmissionColor
+        name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
