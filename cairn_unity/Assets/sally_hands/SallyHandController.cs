@@ -25,6 +25,7 @@ public class SallyHandController : MonoBehaviour {
         GetComponentInParent<VRTK_ControllerEvents>().AliasUseOn += new ControllerInteractionEventHandler(DoUseOn);
         GetComponentInParent<VRTK_ControllerEvents>().AliasUseOff += new ControllerInteractionEventHandler(DoUseOff);
         GetComponentInParent<VRTK_ControllerEvents>().TriggerAxisChanged += new ControllerInteractionEventHandler(DoTriggerAxisChanged);
+        GetComponentInParent<VRTK_ControllerEvents>().AliasUseOff += new ControllerInteractionEventHandler(togglePinch);
 
         GetComponentInParent<VRTK_InteractTouch>().ControllerTouchInteractableObject += new ObjectInteractEventHandler(OnTouchInteractable);
         GetComponentInParent<VRTK_InteractTouch>().ControllerUntouchInteractableObject += new ObjectInteractEventHandler(OnUnTouchInteractable);
@@ -51,7 +52,10 @@ public class SallyHandController : MonoBehaviour {
         }
         
     }
-
+    private void togglePinch(object sender, ControllerInteractionEventArgs e)
+    {
+        pinching = !pinching;
+    }
     private void OnTouchInteractable(object sender, ObjectInteractEventArgs e)
     {
         if (e.target)

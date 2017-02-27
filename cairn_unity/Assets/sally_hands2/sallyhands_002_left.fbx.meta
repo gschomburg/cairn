@@ -1,0 +1,595 @@
+fileFormatVersion: 2
+guid: 934d568abcd6ca84fb62ed59d5ff36a3
+timeCreated: 1488152485
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: armature_left
+    100002: finger_index
+    100004: finger_index.001
+    100006: finger_index.001_end
+    100008: finger_middle
+    100010: finger_middle.001
+    100012: finger_middle.001_end
+    100014: finger_pinky
+    100016: finger_pinky.001
+    100018: finger_pinky.001_end
+    100020: finger_thumb
+    100022: finger_thumb.001
+    100024: finger_thumb.001_end
+    100026: palm_root
+    100028: sally-hands-002-left
+    100030: sally-hands-002-left.001
+    100032: sally-hands-002-left.002
+    100034: sally-hands-002-left.003
+    100036: sally-hands-002-left.004
+    100038: sally-hands-002-left.005
+    100040: sally-hands-002-left.006
+    100042: sally-hands-002-left.007
+    100044: sally-hands-002-left.008
+    100046: sally-hands-002-left.009
+    100048: sally-hands-002-left.010
+    100050: sally-hands-002-left.011
+    100052: sally-hands-002-left.012
+    100054: sally-hands-002-left.013
+    100056: sally-hands-002-left.014
+    100058: sally-hands-002-left.015
+    100060: sally-hands-002-left.016
+    100062: sally-hands-002-left.017
+    100064: sally-hands-002-left.018
+    100066: sally-hands-002-left.019
+    100068: sally-hands-002-left.020
+    100070: sally-hands-002-left.021
+    100072: sally-hands-002-left.022
+    100074: sally-hands-002-left.023
+    100076: sally-hands-002-left.024
+    100078: sally-hands-002-left.025
+    100080: sally-hands-002-left.026
+    100082: sally-hands-002-left.027
+    100084: sally-hands-002-left.029
+    100086: sally-hands-002-left.030
+    100088: sally-hands-002-left.031
+    100090: //RootNode
+    400000: armature_left
+    400002: finger_index
+    400004: finger_index.001
+    400006: finger_index.001_end
+    400008: finger_middle
+    400010: finger_middle.001
+    400012: finger_middle.001_end
+    400014: finger_pinky
+    400016: finger_pinky.001
+    400018: finger_pinky.001_end
+    400020: finger_thumb
+    400022: finger_thumb.001
+    400024: finger_thumb.001_end
+    400026: palm_root
+    400028: sally-hands-002-left
+    400030: sally-hands-002-left.001
+    400032: sally-hands-002-left.002
+    400034: sally-hands-002-left.003
+    400036: sally-hands-002-left.004
+    400038: sally-hands-002-left.005
+    400040: sally-hands-002-left.006
+    400042: sally-hands-002-left.007
+    400044: sally-hands-002-left.008
+    400046: sally-hands-002-left.009
+    400048: sally-hands-002-left.010
+    400050: sally-hands-002-left.011
+    400052: sally-hands-002-left.012
+    400054: sally-hands-002-left.013
+    400056: sally-hands-002-left.014
+    400058: sally-hands-002-left.015
+    400060: sally-hands-002-left.016
+    400062: sally-hands-002-left.017
+    400064: sally-hands-002-left.018
+    400066: sally-hands-002-left.019
+    400068: sally-hands-002-left.020
+    400070: sally-hands-002-left.021
+    400072: sally-hands-002-left.022
+    400074: sally-hands-002-left.023
+    400076: sally-hands-002-left.024
+    400078: sally-hands-002-left.025
+    400080: sally-hands-002-left.026
+    400082: sally-hands-002-left.027
+    400084: sally-hands-002-left.029
+    400086: sally-hands-002-left.030
+    400088: sally-hands-002-left.031
+    400090: //RootNode
+    4300000: sally-hands-002-left.031
+    4300002: sally-hands-002-left.030
+    4300004: sally-hands-002-left.029
+    4300006: sally-hands-002-left.027
+    4300008: sally-hands-002-left.026
+    4300010: sally-hands-002-left.025
+    4300012: sally-hands-002-left.024
+    4300014: sally-hands-002-left.023
+    4300016: sally-hands-002-left.022
+    4300018: sally-hands-002-left.021
+    4300020: sally-hands-002-left.020
+    4300022: sally-hands-002-left.019
+    4300024: sally-hands-002-left.018
+    4300026: sally-hands-002-left.017
+    4300028: sally-hands-002-left.016
+    4300030: sally-hands-002-left.015
+    4300032: sally-hands-002-left.014
+    4300034: sally-hands-002-left.013
+    4300036: sally-hands-002-left.012
+    4300038: sally-hands-002-left.011
+    4300040: sally-hands-002-left.010
+    4300042: sally-hands-002-left.009
+    4300044: sally-hands-002-left.008
+    4300046: sally-hands-002-left.007
+    4300048: sally-hands-002-left.006
+    4300050: sally-hands-002-left.005
+    4300052: sally-hands-002-left.004
+    4300054: sally-hands-002-left.003
+    4300056: sally-hands-002-left.002
+    4300058: sally-hands-002-left.001
+    4300060: sally-hands-002-left
+    7400000: armature_left|ArmatureAction
+    7400002: armature_left|grab
+    7400004: armature_left|idle
+    7400006: armature_left|pinch
+    7400008: armature_left|pinch.001
+    9500000: //RootNode
+    13700000: sally-hands-002-left
+    13700002: sally-hands-002-left.001
+    13700004: sally-hands-002-left.002
+    13700006: sally-hands-002-left.003
+    13700008: sally-hands-002-left.004
+    13700010: sally-hands-002-left.005
+    13700012: sally-hands-002-left.006
+    13700014: sally-hands-002-left.007
+    13700016: sally-hands-002-left.008
+    13700018: sally-hands-002-left.009
+    13700020: sally-hands-002-left.010
+    13700022: sally-hands-002-left.011
+    13700024: sally-hands-002-left.012
+    13700026: sally-hands-002-left.013
+    13700028: sally-hands-002-left.014
+    13700030: sally-hands-002-left.015
+    13700032: sally-hands-002-left.016
+    13700034: sally-hands-002-left.017
+    13700036: sally-hands-002-left.018
+    13700038: sally-hands-002-left.019
+    13700040: sally-hands-002-left.020
+    13700042: sally-hands-002-left.021
+    13700044: sally-hands-002-left.022
+    13700046: sally-hands-002-left.023
+    13700048: sally-hands-002-left.024
+    13700050: sally-hands-002-left.025
+    13700052: sally-hands-002-left.026
+    13700054: sally-hands-002-left.027
+    13700056: sally-hands-002-left.029
+    13700058: sally-hands-002-left.030
+    13700060: sally-hands-002-left.031
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: armature_left|grab
+      takeName: armature_left|grab
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: armature_left
+        weight: 1
+      - path: armature_left/palm_root
+        weight: 1
+      - path: armature_left/palm_root/finger_index
+        weight: 1
+      - path: armature_left/palm_root/finger_index/finger_index.001
+        weight: 1
+      - path: armature_left/palm_root/finger_index/finger_index.001/finger_index.001_end
+        weight: 1
+      - path: armature_left/palm_root/finger_middle
+        weight: 1
+      - path: armature_left/palm_root/finger_middle/finger_middle.001
+        weight: 1
+      - path: armature_left/palm_root/finger_middle/finger_middle.001/finger_middle.001_end
+        weight: 1
+      - path: armature_left/palm_root/finger_pinky
+        weight: 1
+      - path: armature_left/palm_root/finger_pinky/finger_pinky.001
+        weight: 1
+      - path: armature_left/palm_root/finger_pinky/finger_pinky.001/finger_pinky.001_end
+        weight: 1
+      - path: armature_left/palm_root/finger_thumb
+        weight: 1
+      - path: armature_left/palm_root/finger_thumb/finger_thumb.001
+        weight: 1
+      - path: armature_left/palm_root/finger_thumb/finger_thumb.001/finger_thumb.001_end
+        weight: 1
+      - path: sally-hands-002-left
+        weight: 1
+      - path: sally-hands-002-left.001
+        weight: 1
+      - path: sally-hands-002-left.002
+        weight: 1
+      - path: sally-hands-002-left.003
+        weight: 1
+      - path: sally-hands-002-left.004
+        weight: 1
+      - path: sally-hands-002-left.005
+        weight: 1
+      - path: sally-hands-002-left.006
+        weight: 1
+      - path: sally-hands-002-left.007
+        weight: 1
+      - path: sally-hands-002-left.008
+        weight: 1
+      - path: sally-hands-002-left.009
+        weight: 1
+      - path: sally-hands-002-left.010
+        weight: 1
+      - path: sally-hands-002-left.011
+        weight: 1
+      - path: sally-hands-002-left.012
+        weight: 1
+      - path: sally-hands-002-left.013
+        weight: 1
+      - path: sally-hands-002-left.014
+        weight: 1
+      - path: sally-hands-002-left.015
+        weight: 1
+      - path: sally-hands-002-left.016
+        weight: 1
+      - path: sally-hands-002-left.017
+        weight: 1
+      - path: sally-hands-002-left.018
+        weight: 1
+      - path: sally-hands-002-left.019
+        weight: 1
+      - path: sally-hands-002-left.020
+        weight: 1
+      - path: sally-hands-002-left.021
+        weight: 1
+      - path: sally-hands-002-left.022
+        weight: 1
+      - path: sally-hands-002-left.023
+        weight: 1
+      - path: sally-hands-002-left.024
+        weight: 1
+      - path: sally-hands-002-left.025
+        weight: 1
+      - path: sally-hands-002-left.026
+        weight: 1
+      - path: sally-hands-002-left.027
+        weight: 1
+      - path: sally-hands-002-left.029
+        weight: 1
+      - path: sally-hands-002-left.030
+        weight: 1
+      - path: sally-hands-002-left.031
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: armature_left|idle
+      takeName: armature_left|idle
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: armature_left
+        weight: 1
+      - path: armature_left/palm_root
+        weight: 1
+      - path: armature_left/palm_root/finger_index
+        weight: 1
+      - path: armature_left/palm_root/finger_index/finger_index.001
+        weight: 1
+      - path: armature_left/palm_root/finger_index/finger_index.001/finger_index.001_end
+        weight: 1
+      - path: armature_left/palm_root/finger_middle
+        weight: 1
+      - path: armature_left/palm_root/finger_middle/finger_middle.001
+        weight: 1
+      - path: armature_left/palm_root/finger_middle/finger_middle.001/finger_middle.001_end
+        weight: 1
+      - path: armature_left/palm_root/finger_pinky
+        weight: 1
+      - path: armature_left/palm_root/finger_pinky/finger_pinky.001
+        weight: 1
+      - path: armature_left/palm_root/finger_pinky/finger_pinky.001/finger_pinky.001_end
+        weight: 1
+      - path: armature_left/palm_root/finger_thumb
+        weight: 1
+      - path: armature_left/palm_root/finger_thumb/finger_thumb.001
+        weight: 1
+      - path: armature_left/palm_root/finger_thumb/finger_thumb.001/finger_thumb.001_end
+        weight: 1
+      - path: sally-hands-002-left
+        weight: 1
+      - path: sally-hands-002-left.001
+        weight: 1
+      - path: sally-hands-002-left.002
+        weight: 1
+      - path: sally-hands-002-left.003
+        weight: 1
+      - path: sally-hands-002-left.004
+        weight: 1
+      - path: sally-hands-002-left.005
+        weight: 1
+      - path: sally-hands-002-left.006
+        weight: 1
+      - path: sally-hands-002-left.007
+        weight: 1
+      - path: sally-hands-002-left.008
+        weight: 1
+      - path: sally-hands-002-left.009
+        weight: 1
+      - path: sally-hands-002-left.010
+        weight: 1
+      - path: sally-hands-002-left.011
+        weight: 1
+      - path: sally-hands-002-left.012
+        weight: 1
+      - path: sally-hands-002-left.013
+        weight: 1
+      - path: sally-hands-002-left.014
+        weight: 1
+      - path: sally-hands-002-left.015
+        weight: 1
+      - path: sally-hands-002-left.016
+        weight: 1
+      - path: sally-hands-002-left.017
+        weight: 1
+      - path: sally-hands-002-left.018
+        weight: 1
+      - path: sally-hands-002-left.019
+        weight: 1
+      - path: sally-hands-002-left.020
+        weight: 1
+      - path: sally-hands-002-left.021
+        weight: 1
+      - path: sally-hands-002-left.022
+        weight: 1
+      - path: sally-hands-002-left.023
+        weight: 1
+      - path: sally-hands-002-left.024
+        weight: 1
+      - path: sally-hands-002-left.025
+        weight: 1
+      - path: sally-hands-002-left.026
+        weight: 1
+      - path: sally-hands-002-left.027
+        weight: 1
+      - path: sally-hands-002-left.029
+        weight: 1
+      - path: sally-hands-002-left.030
+        weight: 1
+      - path: sally-hands-002-left.031
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: armature_left|pinch
+      takeName: armature_left|pinch
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: armature_left
+        weight: 1
+      - path: armature_left/palm_root
+        weight: 1
+      - path: armature_left/palm_root/finger_index
+        weight: 1
+      - path: armature_left/palm_root/finger_index/finger_index.001
+        weight: 1
+      - path: armature_left/palm_root/finger_index/finger_index.001/finger_index.001_end
+        weight: 1
+      - path: armature_left/palm_root/finger_middle
+        weight: 1
+      - path: armature_left/palm_root/finger_middle/finger_middle.001
+        weight: 1
+      - path: armature_left/palm_root/finger_middle/finger_middle.001/finger_middle.001_end
+        weight: 1
+      - path: armature_left/palm_root/finger_pinky
+        weight: 1
+      - path: armature_left/palm_root/finger_pinky/finger_pinky.001
+        weight: 1
+      - path: armature_left/palm_root/finger_pinky/finger_pinky.001/finger_pinky.001_end
+        weight: 1
+      - path: armature_left/palm_root/finger_thumb
+        weight: 1
+      - path: armature_left/palm_root/finger_thumb/finger_thumb.001
+        weight: 1
+      - path: armature_left/palm_root/finger_thumb/finger_thumb.001/finger_thumb.001_end
+        weight: 1
+      - path: sally-hands-002-left
+        weight: 1
+      - path: sally-hands-002-left.001
+        weight: 1
+      - path: sally-hands-002-left.002
+        weight: 1
+      - path: sally-hands-002-left.003
+        weight: 1
+      - path: sally-hands-002-left.004
+        weight: 1
+      - path: sally-hands-002-left.005
+        weight: 1
+      - path: sally-hands-002-left.006
+        weight: 1
+      - path: sally-hands-002-left.007
+        weight: 1
+      - path: sally-hands-002-left.008
+        weight: 1
+      - path: sally-hands-002-left.009
+        weight: 1
+      - path: sally-hands-002-left.010
+        weight: 1
+      - path: sally-hands-002-left.011
+        weight: 1
+      - path: sally-hands-002-left.012
+        weight: 1
+      - path: sally-hands-002-left.013
+        weight: 1
+      - path: sally-hands-002-left.014
+        weight: 1
+      - path: sally-hands-002-left.015
+        weight: 1
+      - path: sally-hands-002-left.016
+        weight: 1
+      - path: sally-hands-002-left.017
+        weight: 1
+      - path: sally-hands-002-left.018
+        weight: 1
+      - path: sally-hands-002-left.019
+        weight: 1
+      - path: sally-hands-002-left.020
+        weight: 1
+      - path: sally-hands-002-left.021
+        weight: 1
+      - path: sally-hands-002-left.022
+        weight: 1
+      - path: sally-hands-002-left.023
+        weight: 1
+      - path: sally-hands-002-left.024
+        weight: 1
+      - path: sally-hands-002-left.025
+        weight: 1
+      - path: sally-hands-002-left.026
+        weight: 1
+      - path: sally-hands-002-left.027
+        weight: 1
+      - path: sally-hands-002-left.029
+        weight: 1
+      - path: sally-hands-002-left.030
+        weight: 1
+      - path: sally-hands-002-left.031
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
