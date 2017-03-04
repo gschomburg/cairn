@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using InControl;
 
 public class PlayerControl2 : MonoBehaviour {
@@ -25,6 +23,8 @@ public class PlayerControl2 : MonoBehaviour {
 	void Start () {
 		animator = GetComponentInChildren<Animator>();
 		rigid_body = GetComponent<Rigidbody>();
+		
+		
 	}
 
 	void Update () {
