@@ -15,7 +15,7 @@ public class VirtualCamera : MonoBehaviour
     //// Use this for initialization
     void Start()
     {
-        startTime = System.DateTime.UtcNow.ToString("yyyy_mm_dd_HH:mm");
+        startTime = System.DateTime.UtcNow.ToString("yyyy_mm_dd_HH_mm");
         //base.Start();
 
         displayCamera = Instantiate<Camera>(SceneCamera);
@@ -56,7 +56,7 @@ public class VirtualCamera : MonoBehaviour
     public void Capture()
     {
         image_number++;
-        
-        Utils.SaveTextureToFile(ScreenTexture, startTime + "_" + image_number +".png");
+        string path = Application.streamingAssetsPath + "/Captures";
+        Utils.SaveTextureToFile(ScreenTexture, path + "/" + startTime + "_" + image_number +".png");
     }
 }
