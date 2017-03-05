@@ -173,3 +173,12 @@ Material:
     - first:
         name: _ScrollSpeed2
       second: {r: 0, g: -0.02, b: 0, a: 0}
+    - first:
+	name: _Texture1Speed
+      second: {r: 0.01, g: 0.01, b: 0, a: 0}
+    - first:
+	name: _Texture2Speed
+      second: {r: 0.02, g: 0.015, b: 0, a: 0}
+    - first:
+	name: _TextureColor
+      second: {r: 1, g: 1, b: 1, a: 1}
