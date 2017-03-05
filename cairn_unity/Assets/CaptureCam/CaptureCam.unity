@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 499281365}
   - component: {fileID: 499281367}
   - component: {fileID: 499281363}
+  - component: {fileID: 499281364}
   m_Layer: 0
   m_Name: CaptureCamUI
   m_TagString: Untagged
@@ -214,9 +215,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   captureCam: {fileID: 0}
   screen: {fileID: 987740329}
+--- !u!114 &499281364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 499281361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa2ad6767bfdfe43a188bc569e70b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   attachmentFlags: 12
   attachmentPoint: 
-  restoreOriginalParent: 0
+  restoreOriginalParent: 1
 --- !u!65 &499281365
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1243,7 +1255,6 @@ GameObject:
   - component: {fileID: 2081549111}
   - component: {fileID: 2081549110}
   - component: {fileID: 2081549109}
-  - component: {fileID: 2081549108}
   - component: {fileID: 2081549112}
   - component: {fileID: 2081549113}
   m_Layer: 0
@@ -1266,21 +1277,6 @@ Transform:
   m_Father: {fileID: 987740330}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2081549108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2081549106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b3e362230b8d894fbb5b508d9ffa653, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeHand: {fileID: 0}
-  startScale: 0
-  targScale: 0
-  cam: {fileID: 0}
 --- !u!23 &2081549109
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1355,7 +1351,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onTriggerDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 499281363}
+        m_MethodName: Capture
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   onTriggerUp:
