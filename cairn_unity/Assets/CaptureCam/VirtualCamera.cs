@@ -57,6 +57,6 @@ public class VirtualCamera : MonoBehaviour
     {
         image_number++;
         string path = Application.streamingAssetsPath + "/Captures";
-        Utils.SaveTextureToFile(ScreenTexture, path + "/" + startTime + "_" + image_number +".png");
+        Utils.SaveTextureToFile(ScreenTexture, path, "/" + startTime + "_" + image_number +".png");
     }
 }
