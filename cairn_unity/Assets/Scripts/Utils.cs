@@ -14,6 +14,7 @@ public class Utils : MonoBehaviour {
 
     public static void SaveTextureToFile( RenderTexture renderTexture, string name)
     {
+        Debug.Log("captureing");
         RenderTexture currentActiveRT = RenderTexture.active;
         RenderTexture.active = renderTexture;
         Texture2D tex = new Texture2D(renderTexture.width, renderTexture.height);
