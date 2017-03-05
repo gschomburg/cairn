@@ -4,7 +4,11 @@ using UnityEngine;
 
 using Valve.VR.InteractionSystem;
 
-public class HandCam : MonoBehaviour {
+public class CaptureCamUI : MonoBehaviour {
+
+    public CaptureCam captureCam;
+    public GameObject screen;
+
     [EnumFlags]
     public Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.ParentToHand | Hand.AttachmentFlags.DetachFromOtherHand;
     public string attachmentPoint;
@@ -13,8 +17,13 @@ public class HandCam : MonoBehaviour {
     private Quaternion attachRotation;
     // Use this for initialization
     void Start () {
-		
+       
+        //wait for cam init
 	}
+    public void init(CaptureCam _captureCam){
+        captureCam = _captureCam;
+        screen.GetComponent<Renderer>().material.mainTexture = captureCam.ScreenTexture;
+    }
 	
 	// Update is called once per frame
 	//void Update () {

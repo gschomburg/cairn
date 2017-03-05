@@ -11,14 +11,14 @@ public class SallyHandController : MonoBehaviour {
     public bool pinching = false;
     public List<GameObject> pinchOnGrabObjects;
 
-    public enum TargetHand
+    public enum HandSide
     {
         Right,
         Left
     }
 
-    public Hand attachHand;
-    public TargetHand handId = TargetHand.Right;
+    public Hand targetHand;
+    public HandSide handSide = HandSide.Right;
 
     private void Start()
     {
@@ -27,63 +27,39 @@ public class SallyHandController : MonoBehaviour {
             attachPoint = transform;
         }
         //attach to correct hand
-        attachHand = Player.instance.GetHand((int)handId);
-        transform.parent = attachHand.transform;
-        //TODO change this into some sort of call back from the controller when it's ready
-
-        //perhaps
-        //OnHandInitialized
-        // StartCoroutine(LateStart());
+        targetHand = Player.instance.GetHand((int)handSide);
+        transform.parent = targetHand.transform;
     }
+
     private void OnHandInitialized(){
-        Debug.Log("OnHandInitialized");
+        //rotate first
         Quaternion rotationOffset = Quaternion.Inverse(attachPoint.rotation) * transform.rotation;
-        transform.rotation = attachHand.transform.rotation * rotationOffset;
+        transform.rotation = targetHand.transform.rotation * rotationOffset;
+        //then position
+        transform.position = targetHand.transform.position + (transform.position - attachPoint.position);
 
-        transform.position = attachHand.transform.position + (transform.position - attachPoint.position);
-        // transform.parent = attachHand.transform;
         //TODO also move all the loose pieces
         
-
         // hide the attach point
         if(attachPoint != transform){
             attachPoint.gameObject.SetActive(false);
         }
-    }
-    private IEnumerator LateStart()
-    {
-        yield return new WaitForSeconds(1);
-        //move to hand
-        Quaternion rotationOffset = Quaternion.Inverse(attachPoint.rotation) * transform.rotation;
-        transform.rotation = attachHand.transform.rotation * rotationOffset;
-
-        transform.position = attachHand.transform.position + (transform.position - attachPoint.position);
-        transform.parent = attachHand.transform;
-        //TODO also move all the loose pieces
-        
-
-        // hide the attach point
-        if(attachPoint != transform){
-            attachPoint.gameObject.SetActive(false);
-        }
-        //hide the controller
-        // attachHand.controller.
     }
     void FixedUpdate()
     {
         pinchVal = grabVal = .01f; //reset grab and pinch
 
-        if(!attachHand || attachHand.controller == null){
+        if(!targetHand || targetHand.controller == null){
             Debug.Log("controller not found");
             return;
         }else{
              // Vector2 trigger = attachHand.controller.GetAxis(EVRButtonId.k_EButton_Axis1);
             if(pinching){
-                pinchVal = attachHand.controller.GetAxis(EVRButtonId.k_EButton_Axis1).x;
+                pinchVal = targetHand.controller.GetAxis(EVRButtonId.k_EButton_Axis1).x;
             }else{
-                grabVal = attachHand.controller.GetAxis(EVRButtonId.k_EButton_Axis1).x;
+                grabVal = targetHand.controller.GetAxis(EVRButtonId.k_EButton_Axis1).x;
             }
-             if(attachHand.controller.GetPressDown(EVRButtonId.k_EButton_SteamVR_Touchpad)){
+             if(targetHand.controller.GetPressDown(EVRButtonId.k_EButton_SteamVR_Touchpad)){
                 togglePinch();
             }
         }

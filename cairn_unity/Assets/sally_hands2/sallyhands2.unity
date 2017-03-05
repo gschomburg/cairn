@@ -705,8 +705,8 @@ MonoBehaviour:
   pinchVal: 0
   pinching: 0
   pinchOnGrabObjects: []
-  attachHand: {fileID: 0}
-  handId: 0
+  targetHand: {fileID: 0}
+  handSide: 0
 --- !u!4 &512933588 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400100, guid: 75584dab6a6a52a49ab06d075d4bee0b, type: 3}
@@ -3667,8 +3667,8 @@ MonoBehaviour:
   pinchVal: 0
   pinching: 0
   pinchOnGrabObjects: []
-  attachHand: {fileID: 0}
-  handId: 1
+  targetHand: {fileID: 0}
+  handSide: 1
 --- !u!4 &1863988187 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400090, guid: 934d568abcd6ca84fb62ed59d5ff36a3, type: 3}

@@ -2,35 +2,36 @@
 using System.Collections;
 using System;
 
-public class VirtualCamera : MonoBehaviour
+[RequireComponent( typeof( Camera ) )]
+public class CaptureCam : MonoBehaviour
 {
-    
+    public CaptureCamUI ui;
     public int image_number = 0;
 
-    public Camera SceneCamera;
+    public Camera sceneCamera;
     public Camera displayCamera;
-    public GameObject Screen;
+    // public GameObject Screen;
     string startTime;
     public RenderTexture ScreenTexture; //public just for inspection
-    //// Use this for initialization
+
     void Start()
     {
         startTime = System.DateTime.UtcNow.ToString("yyyy_mm_dd_HH_mm");
         //base.Start();
-
-        displayCamera = Instantiate<Camera>(SceneCamera);
-        Destroy(displayCamera.GetComponent<VirtualCamera>());
+        sceneCamera = GetComponent<Camera>();
+        displayCamera = Instantiate<Camera>(sceneCamera);
+        Destroy(displayCamera.GetComponent<CaptureCam>());
         Destroy(displayCamera.GetComponent<LinkedCamera>());
         
-        displayCamera.transform.parent = SceneCamera.transform;
+        displayCamera.transform.parent = sceneCamera.transform;
 
         ScreenTexture = new RenderTexture(1920, 1080, 24, RenderTextureFormat.ARGB32, RenderTextureReadWrite.sRGB);
         ScreenTexture.antiAliasing = 8;
-        SceneCamera.targetTexture = ScreenTexture;
-        Screen.GetComponent<Renderer>().material.mainTexture = ScreenTexture;
+        sceneCamera.targetTexture = ScreenTexture;
+        //Screen.GetComponent<Renderer>().material.mainTexture = ScreenTexture;
+        ui.init(this);
     }
 
-    //// Update is called once per frame
     //void Update () {
 
     //}

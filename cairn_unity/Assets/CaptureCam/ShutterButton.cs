@@ -9,7 +9,7 @@ public class ShutterButton : MonoBehaviour {
     public float startScale;
     public float targScale;
 
-    public VirtualCamera cam;
+    public CaptureCam cam;
     // Use this for initialization
     void Start () {
         startScale = transform.localScale.x;
