@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
-
+using Valve.VR;
 public class SallyHandController : MonoBehaviour {
     Animator animator;
+    public Transform attachPoint; //attachpoint should be direct child of the transform
     public float grabVal;
     public float pinchVal;
     public bool pinching = false;
     public List<GameObject> pinchOnGrabObjects;
-    public Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.ParentToHand | Hand.AttachmentFlags.DetachFromOtherHand;
-    public string attachmentPoint;
+    // public Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.ParentToHand | Hand.AttachmentFlags.DetachFromOtherHand;
+    // public string attachmentPoint;
 
     public enum TargetHand
     {
@@ -24,7 +25,9 @@ public class SallyHandController : MonoBehaviour {
     private void Start()
     {
         animator = GetComponentInChildren<Animator>();
-
+        if(attachPoint==null){
+            attachPoint = transform;
+        }
         //attach to correct hand
         attachHand = Player.instance.GetHand((int)handId);
 
@@ -42,8 +45,14 @@ public class SallyHandController : MonoBehaviour {
     private IEnumerator LateStart()
     {
         yield return new WaitForSeconds(1);
+        //move to hand
+        Quaternion rotationOffset = Quaternion.Inverse(attachPoint.rotation) * transform.rotation;
+        transform.rotation = attachHand.transform.rotation * rotationOffset;
 
-        attachHand.AttachObject(gameObject, attachmentFlags, attachmentPoint);
+        transform.position = attachHand.transform.position + (transform.position- attachPoint.position);
+        transform.parent = attachHand.transform;
+        //also move all the loose pieces
+        // attachHand.AttachObject(gameObject, attachmentFlags, attachmentPoint);
     }
 
     //private void InversePosition(Transform givenTransform)
@@ -67,6 +76,15 @@ public class SallyHandController : MonoBehaviour {
     //    }
 
     //}
+    void FixedUpdate()
+    {
+        if(!attachHand || attachHand.controller == null){
+            Debug.Log("controller not found");
+            return;
+        }
+        Vector2 trigger = attachHand.controller.GetAxis(EVRButtonId.k_EButton_Axis1);
+        Debug.Log(trigger);
+    }
     private void togglePinch()
     {
         pinching = !pinching;
