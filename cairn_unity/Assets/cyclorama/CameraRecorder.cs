@@ -14,7 +14,7 @@ public class CameraRecorder : MonoBehaviour
 
     }
 
-     void Update() {
+    void Update() {
         if (Input.GetKeyDown("space")){
             Capture();
         }

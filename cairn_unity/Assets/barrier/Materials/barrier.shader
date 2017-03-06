@@ -117,7 +117,7 @@
 				float fade = 1 - i.uv.y;
 				fade = smoothstep(_FadeStart, _FadeEnd, fade);
 				color_out.rgb  *= fade;
-				
+				color_out.a = color_out.r;
 				//// Return
 				return saturate(color_out);
 			}
