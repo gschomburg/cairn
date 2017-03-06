@@ -2,34 +2,87 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 using Valve.VR.InteractionSystem;
+// using Valve.VR;
 
 public class CaptureCamUI : MonoBehaviour {
 
     public CaptureCam captureCam;
     public GameObject screen;
-
+    public bool isActive;
     //
    
     // private Vector3 attachPosition;
     // private Quaternion attachRotation;
     // Use this for initialization
-    void Start () {
-       
-        //wait for cam init
+    void Start () {    
+        //wait for cam init 
 	}
     public void init(CaptureCam _captureCam){
         captureCam = _captureCam;
         screen.GetComponent<Renderer>().material.mainTexture = captureCam.ScreenTexture;
+        if(!isActive){
+            hide();
+        }
     }
 	
 	// Update is called once per frame
 	//void Update () {
-		
+	
+    void Update () {
+
+        // if(targetHand.controller.GetPressDown(EVRButtonId.k_EButton_SteamVR_Touchpad)){
+        //     toggleActive();
+        // }
+        for ( int i = 0; i < Player.instance.handCount; i++ )
+        {
+            Hand hand = Player.instance.GetHand( i );
+
+            if ( hand.controller != null )
+            {
+                if ( hand.controller.GetPressDown( Valve.VR.EVRButtonId.k_EButton_ApplicationMenu ) )
+                {
+                    toggleActive();
+                }
+            }
+        }
+    
+    }
+
+    void toggleActive(){
+        isActive = !isActive;
+        if(isActive){
+            show();
+        }else{
+            hide();
+        }
+        // Debug.Log("toggleActive");
+    }
+    void show(){
+        GetComponent<BoxCollider>().enabled=true;
+        GetComponent<SimpleGrabbable>().enabled=true;
+        GetComponent<Interactable>().enabled=true;
+        for(int i =0; i<transform.childCount; i++)
+        {
+             transform.GetChild(i).gameObject.SetActive(true);
+        }
+        captureCam.gameObject.SetActive(true);
+    }
+    void hide(){
+        GetComponent<BoxCollider>().enabled=false;
+        GetComponent<SimpleGrabbable>().enabled=false;
+        GetComponent<Interactable>().enabled=false;
+        for(int i =0; i<transform.childCount; i++)
+        {
+             transform.GetChild(i).gameObject.SetActive(false);
+        }
+        captureCam.gameObject.SetActive(false);
+    }
+
 	//}
     public void Capture(){
-        // captureCam.Capture();
-        Debug.Log("capture");
+        captureCam.Capture();
     }
 
     // private void OnHandHoverBegin(Hand hand)

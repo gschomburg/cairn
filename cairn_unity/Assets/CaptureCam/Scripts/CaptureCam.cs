@@ -2,6 +2,7 @@
 using System.Collections;
 using System;
 
+
 [RequireComponent( typeof( Camera ) )]
 public class CaptureCam : MonoBehaviour
 {
@@ -32,9 +33,7 @@ public class CaptureCam : MonoBehaviour
         ui.init(this);
     }
 
-    //void Update () {
 
-    //}
 
     //void OnPreRender()
     //{
