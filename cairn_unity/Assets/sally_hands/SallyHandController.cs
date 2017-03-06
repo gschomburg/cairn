@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 using Valve.VR;
+
+//TODO attach to hands properly using interaction system
 public class SallyHandController : MonoBehaviour {
     Animator animator;
     public Transform attachPoint; //attachpoint should be direct child of the transform

@@ -2,6 +2,29 @@
 using System.Collections;
 using System;
 
+//TODO
+/*
+add menu that activates camera
+
+culling layers for camera, camera doens't display itself or controllers
+
+have camera get created and destroyed when actrivated instead of hiding
+
+make screen attach joints get bigger on trigger/collide
+
+add ui to controller when camera is active
+
+canvas menu
+    - toggle look at object
+    - screen size
+    - pause time
+    - FOV slider
+    - effect sliders
+    - animation path
+        - add current position
+        - clear positions
+        -set animation duration
+*/
 
 [RequireComponent( typeof( Camera ) )]
 public class CaptureCam : MonoBehaviour
@@ -33,26 +56,6 @@ public class CaptureCam : MonoBehaviour
         ui.init(this);
     }
 
-
-
-    //void OnPreRender()
-    //{
-    //    SceneCamera.targetTexture = ScreenTexture;
-    //}
-    //void OnPostRender()
-    //{
-    //    //Debug.Log("OnPostRender");
-    //    SceneCamera.targetTexture = null;
-    //}
-
-
-    //public override void UseButtonDown()
-    //{
-    //    base.UseButtonDown();
-
-    //    //take a photo
-    //    Debug.Log("screenshot");
-    //}
     public void Capture()
     {
         image_number++;
