@@ -38,18 +38,21 @@ public class CaptureCam : MonoBehaviour
     string startTime;
     public RenderTexture ScreenTexture; //public just for inspection
 
+
     void Start()
     {
         startTime = System.DateTime.UtcNow.ToString("yyyy_mm_dd_HH_mm");
         //base.Start();
         sceneCamera = GetComponent<Camera>();
-        displayCamera = Instantiate<Camera>(sceneCamera);
-        Destroy(displayCamera.GetComponent<CaptureCam>());
-        Destroy(displayCamera.GetComponent<LinkedCamera>());
+        // displayCamera = Instantiate<Camera>(sceneCamera);
+        // Destroy(displayCamera.GetComponent<CaptureCam>());
+        // Destroy(displayCamera.GetComponent<LinkedCamera>());
         
-        displayCamera.transform.parent = sceneCamera.transform;
-
-        ScreenTexture = new RenderTexture(1920, 1080, 24, RenderTextureFormat.ARGB32, RenderTextureReadWrite.sRGB);
+        // displayCamera.transform.parent = sceneCamera.transform;
+        int s =1;
+        int w = 1920 *s;
+        int h = 1080 *s; 
+        ScreenTexture = new RenderTexture(w, h, 24, RenderTextureFormat.ARGB32, RenderTextureReadWrite.sRGB);
         ScreenTexture.antiAliasing = 8;
         sceneCamera.targetTexture = ScreenTexture;
         //Screen.GetComponent<Renderer>().material.mainTexture = ScreenTexture;

@@ -6,6 +6,9 @@ using Valve.VR;
 
 //TODO attach to hands properly using interaction system
 public class SallyHandController : MonoBehaviour {
+
+    public CaptureCam captureCam;
+
     Animator animator;
     public Transform attachPoint; //attachpoint should be direct child of the transform
     public float grabVal;
@@ -63,6 +66,7 @@ public class SallyHandController : MonoBehaviour {
             }
              if(targetHand.controller.GetPressDown(EVRButtonId.k_EButton_SteamVR_Touchpad)){
                 togglePinch();
+                captureCam.Capture();
             }
         }
 
