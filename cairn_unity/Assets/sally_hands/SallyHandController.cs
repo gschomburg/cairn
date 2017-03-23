@@ -1,118 +1,87 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRTK;
+using Valve.VR.InteractionSystem;
+using Valve.VR;
 
+//TODO attach to hands properly using interaction system
 public class SallyHandController : MonoBehaviour {
+
+    public CaptureCam captureCam;
+
     Animator animator;
+    public Transform attachPoint; //attachpoint should be direct child of the transform
     public float grabVal;
     public float pinchVal;
     public bool pinching = false;
     public List<GameObject> pinchOnGrabObjects;
-    public enum Hands
+
+    public enum HandSide
     {
         Right,
         Left
     }
 
-    public Hands hand = Hands.Right;
+    public Hand targetHand;
+    public HandSide handSide = HandSide.Right;
 
     private void Start()
     {
         animator = GetComponentInChildren<Animator>();
-        GetComponentInParent<VRTK_ControllerEvents>().AliasGrabOn += new ControllerInteractionEventHandler(DoGrabOn);
-        GetComponentInParent<VRTK_ControllerEvents>().AliasGrabOff += new ControllerInteractionEventHandler(DoGrabOff);
-        GetComponentInParent<VRTK_ControllerEvents>().AliasUseOn += new ControllerInteractionEventHandler(DoUseOn);
-        GetComponentInParent<VRTK_ControllerEvents>().AliasUseOff += new ControllerInteractionEventHandler(DoUseOff);
-        GetComponentInParent<VRTK_ControllerEvents>().TriggerAxisChanged += new ControllerInteractionEventHandler(DoTriggerAxisChanged);
-        GetComponentInParent<VRTK_ControllerEvents>().AliasUseOff += new ControllerInteractionEventHandler(togglePinch);
-
-        //GetComponentInParent<VRTK_InteractTouch>().ControllerTouchInteractableObject += new ObjectInteractEventHandler(OnTouchInteractable);
-        //GetComponentInParent<VRTK_InteractTouch>().ControllerUntouchInteractableObject += new ObjectInteractEventHandler(OnUnTouchInteractable);
+        if(attachPoint==null){
+            attachPoint = transform;
+        }
+        //attach to correct hand
+        targetHand = Player.instance.GetHand((int)handSide);
+        transform.parent = targetHand.transform;
     }
 
-    //private void InversePosition(Transform givenTransform)
-    //{
-    //    givenTransform.localPosition = new Vector3(givenTransform.localPosition.x * -1, givenTransform.localPosition.y, givenTransform.localPosition.z);
-    //    givenTransform.localEulerAngles = new Vector3(givenTransform.localEulerAngles.x, givenTransform.localEulerAngles.y * -1, givenTransform.localEulerAngles.z);
-    //}
+    private void OnHandInitialized(){
+        //rotate first
+        Quaternion rotationOffset = Quaternion.Inverse(attachPoint.rotation) * transform.rotation;
+        transform.rotation = targetHand.transform.rotation * rotationOffset;
+        //then position
+        transform.position = targetHand.transform.position + (transform.position - attachPoint.position);
 
-    private void DoTriggerAxisChanged(object sender, ControllerInteractionEventArgs e)
-    {
-        //rcCarScript.SetTriggerAxis(e.buttonPressure);
-        if (pinching)
-        {
-            pinchVal = e.buttonPressure;
-            grabVal = 0.01f;
-        }
-        else
-        {
-            grabVal = e.buttonPressure;
-            pinchVal = 0.01f;
-        }
+        //TODO also move all the loose pieces
         
+        // hide the attach point
+        if(attachPoint != transform){
+            attachPoint.gameObject.SetActive(false);
+        }
     }
-    private void togglePinch(object sender, ControllerInteractionEventArgs e)
+    void FixedUpdate()
+    {
+        pinchVal = grabVal = .01f; //reset grab and pinch
+
+        if(!targetHand || targetHand.controller == null){
+            Debug.Log("controller not found");
+            return;
+        }else{
+             // Vector2 trigger = attachHand.controller.GetAxis(EVRButtonId.k_EButton_Axis1);
+            if(pinching){
+                pinchVal = targetHand.controller.GetAxis(EVRButtonId.k_EButton_Axis1).x;
+            }else{
+                grabVal = targetHand.controller.GetAxis(EVRButtonId.k_EButton_Axis1).x;
+            }
+             if(targetHand.controller.GetPressDown(EVRButtonId.k_EButton_SteamVR_Touchpad)){
+                togglePinch();
+                captureCam.Capture();
+            }
+        }
+
+        animator.SetFloat("Blend_Grab", grabVal, .05f, Time.deltaTime);
+        animator.SetFloat("Blend_Pinch", pinchVal, .05f, Time.deltaTime);
+        // Debug.Log(trigger);
+    }
+    private void togglePinch()
     {
         pinching = !pinching;
     }
-    private void OnTouchInteractable(object sender, ObjectInteractEventArgs e)
-    {
-        if (e.target)
-        {
-            if (pinchOnGrabObjects.Contains(e.target))
-            {
-                pinching = true;
-                Debug.Log("PINCH");
-            }
-            else
-            {
-                pinching = false;
-            }
-        }
-        Debug.Log("OnTouchInteractable");
-    }
-    private void OnUnTouchInteractable(object sender, ObjectInteractEventArgs e)
-    {
-        //if (e.target)
-        //{
-        //    if (pinchOnGrabObjects.Contains(e.target))
-        //    {
-        //        pinching = true;
-        //    }
-        //}
-        pinching = false;
-        Debug.Log("OnUnTouchInteractable");
-    }
 
-    private void DoGrabOn(object sender, ControllerInteractionEventArgs e)
-    {
-        //targetGripRotation = maxRotation;
-        //grabVal = 1;
-    }
-
-    private void DoGrabOff(object sender, ControllerInteractionEventArgs e)
-    {
-        //targetGripRotation = originalGripRotation;
-        //grabVal = 0;
-    }
-
-    private void DoUseOn(object sender, ControllerInteractionEventArgs e)
-    {
-        //targetPointerRotation = maxRotation;
-    }
-
-    private void DoUseOff(object sender, ControllerInteractionEventArgs e)
-    {
-        //targetPointerRotation = originalPointerRotation;
-    }
-
-    private void Update()
-    {
-        //pointerFinger.localEulerAngles = new Vector3(targetPointerRotation, 0f, 0f);
-        //gripFingers.localEulerAngles = new Vector3(targetGripRotation, 0f, 0f);
-        
-        animator.SetFloat("Blend_Grab", grabVal, .05f, Time.deltaTime);
-        animator.SetFloat("Blend_Pinch", pinchVal, .05f, Time.deltaTime);
-    }
+    // private void Update()
+    // {   
+    //     animator.SetFloat("Blend_Grab", grabVal, .05f, Time.deltaTime);
+    //     animator.SetFloat("Blend_Pinch", pinchVal, .05f, Time.deltaTime);
+    // }
 }

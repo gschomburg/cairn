@@ -147,10 +147,10 @@ Material:
       second: 1
     - first:
         name: _TextureContribution
-      second: 4.43
+      second: 0.5
     - first:
         name: _TexturePower
-      second: 6.53
+      second: 53.2
     - first:
         name: _UVSec
       second: 0

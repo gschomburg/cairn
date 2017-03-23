@@ -9,29 +9,29 @@ public class ShutterButton : MonoBehaviour {
     public float startScale;
     public float targScale;
 
-    public VirtualCamera cam;
+    public CaptureCam cam;
     // Use this for initialization
     void Start () {
         startScale = transform.localScale.x;
 
     }
-    private void HandHoverUpdate(Hand hand)
-    {
-        //Trigger got pressed
-        if (hand.GetStandardInteractionButtonDown())
-        {
-            //Debug.Log("button pressed");
-            //activeHand = hand;
-            //clicked = true;
-            //hand.AttachObject(gameObject, attachmentFlags, attachmentPoint);
-            //ControllerButtonHints.HideButtonHint(hand, Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger);
-            cam.Capture();
-        }
-        //if (hand.GetStandardInteractionButtonDown())
-        //{
-        //    Debug.Log("GetStandardInteractionButtonDown");
-        //}
-    }
+    // private void HandHoverUpdate(Hand hand)
+    // {
+    //     //Trigger got pressed
+    //     if (hand.GetStandardInteractionButtonDown())
+    //     {
+    //         //Debug.Log("button pressed");
+    //         //activeHand = hand;
+    //         //clicked = true;
+    //         //hand.AttachObject(gameObject, attachmentFlags, attachmentPoint);
+    //         //ControllerButtonHints.HideButtonHint(hand, Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger);
+    //         cam.Capture();
+    //     }
+    //     //if (hand.GetStandardInteractionButtonDown())
+    //     //{
+    //     //    Debug.Log("GetStandardInteractionButtonDown");
+    //     //}
+    // }
     // Update is called once per frame
     //void Update () {
     //    if (clicked && activeHand && !activeHand.GetStandardInteractionButtonDown()) {
