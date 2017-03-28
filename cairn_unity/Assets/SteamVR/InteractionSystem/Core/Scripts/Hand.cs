@@ -557,6 +557,7 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		private void UpdateNoSteamVRFallback()
 		{
+			Debug.Log("eat");
 			if ( noSteamVRFallbackCamera )
 			{
 				Ray ray = noSteamVRFallbackCamera.ScreenPointToRay( Input.mousePosition );
@@ -707,7 +708,7 @@ namespace Valve.VR.InteractionSystem
 			{
 				DetachObject( applicationLostFocusObject, true );
 				applicationLostFocusObject.SetActive( false );
-				UpdateHandPoses();
+				// UpdateHandPoses();
 				UpdateHovering();
 				BroadcastMessage( "OnParentHandInputFocusAcquired", SendMessageOptions.DontRequireReceiver );
 			}
@@ -745,7 +746,9 @@ namespace Valve.VR.InteractionSystem
 			}
 		}
 
-
+		float oldV = 0;
+		float deltaS =0;
+		int c = 0;
 		//-------------------------------------------------
 		private void UpdateHandPoses()
 		{
@@ -760,8 +763,19 @@ namespace Valve.VR.InteractionSystem
 					if ( err == Valve.VR.EVRCompositorError.None )
 					{
 						var t = new SteamVR_Utils.RigidTransform( gamePose.mDeviceToAbsoluteTracking );
+						float newV = (transform.localPosition - t.pos).x;
+					//	Debug.Log((c++) + " " + (newV - oldV).ToString("F4"));
+						oldV = newV;
+						//Debug.Log((transform.localPosition - t.pos).x);
+						
+						// transform.localPosition = new Vector3(Mathf.Sin(deltaS+=.01f)*1.5f, 1.5f, 0);
+						//  transform.localPosition = Vector3.Lerp(transform.localPosition, t.pos, .05f);
+
 						transform.localPosition = t.pos;
 						transform.localRotation = t.rot;
+					} else {
+
+						Debug.Log("glitch it");
 					}
 				}
 			}

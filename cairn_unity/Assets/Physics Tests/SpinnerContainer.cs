@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpinnerContainer : MonoBehaviour {
-	public Rigidbody rb;
+	Rigidbody rb;
 
 
 	// Use this for initialization

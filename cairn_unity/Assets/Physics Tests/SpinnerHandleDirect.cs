@@ -24,7 +24,6 @@ public class SpinnerHandleDirect : MonoBehaviour {
     }
     
     private void Grab(Hand hand){
-        Debug.Log("Grab");
         attachedHand = hand;
         dragging = true;
        // startAngle = Mathf.Rad2Deg * Mathf.Atan2(transform.localPosition.x, transform.localPosition.z) ;
@@ -37,20 +36,12 @@ public class SpinnerHandleDirect : MonoBehaviour {
 	
 	private void Drag()
     {
-        //lock the y axis
-
         Vector3 handPosition = new Vector3(attachedHand.transform.position.x, 0.0f, attachedHand.transform.position.z);
-        //handPosition = targetSpinner.InverseTransformPoint(handPosition);
         float targetAngle = Mathf.Rad2Deg * Mathf.Atan2(handPosition.x, handPosition.z);
-       // targetAngle -= startAngle;
-
-        //Debug.Log(targetAngle+" "+startAngle);
         targetSpinner.rotation = Quaternion.AngleAxis(targetAngle - startAngle, Vector3.up);
-       // transform.position = new Vector3(Mathf.Sin(targetAngle) * distance, jointVisualizer.position.y, Mathf.Cos(targetAngle) * distance);
         if (!attachedHand.GetStandardInteractionButton())
         {
             Drop();
-            //StartCoroutine(LateDetach(attachedHand));
         }
     }
 
@@ -60,21 +51,12 @@ public class SpinnerHandleDirect : MonoBehaviour {
         attachedHand = null;
      }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if(dragging)
         {
             Drag();
-        }
-    }
-
-    
-
-
-    void Update () {
-        if (dragging) {
             float newAngle = transform.rotation.eulerAngles.y;
-            Debug.Log(newAngle);
             if (Mathf.Abs(newAngle - oldAngle) < 180) {
                 // if delta angle is > 180 it a mistake as the angle loops from 0 to 360, just don't count it.
                 deltaAngle =  newAngle - oldAngle;
@@ -84,7 +66,5 @@ public class SpinnerHandleDirect : MonoBehaviour {
              targetSpinner.Rotate(new Vector3(0,deltaAngle,0));
              deltaAngle *= .97f;
         }
-
-	//	targetSpinner.Rotate(new Vector3(0, Mathf.Sin(n++/2.0f), 0));
-	}
+    }
 }
