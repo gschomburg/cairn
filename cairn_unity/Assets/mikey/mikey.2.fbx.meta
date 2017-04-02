@@ -139,8 +139,9 @@ ModelImporter:
     motionNodeName: 
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Armature|Jump' has import animation warnings
-      that might lower retargeting quality:\n\t'Hip.R' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\nClip 'Armature|Jump2'
+      that might lower retargeting quality:\n\t'Hip.L' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Hip.R' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\nClip 'Armature|Jump2'
       has import animation warnings that might lower retargeting quality:\n\t'Hip.L'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Hip.R'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
@@ -180,8 +181,8 @@ ModelImporter:
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -382,7 +383,7 @@ ModelImporter:
       name: Armature|Jump
       takeName: Armature|Jump
       firstFrame: 0
-      lastFrame: 34
+      lastFrame: 5
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -392,7 +393,7 @@ ModelImporter:
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
-      loopBlendPositionY: 0
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
@@ -462,21 +463,21 @@ ModelImporter:
       - path: Armature/Main/Hip.R/UpperLeg.R/LowerLeg.R/Foot.R/Toe.R/Toe.R_end
         weight: 0
       - path: Armature/Main/Butt
-        weight: 0
+        weight: 1
       - path: Armature/Main/Butt/Tail.1
-        weight: 0
+        weight: 1
       - path: Armature/Main/Butt/Tail.1/Tail.2
-        weight: 0
+        weight: 1
       - path: Armature/Main/Butt/Tail.1/Tail.2/Tail.3
-        weight: 0
+        weight: 1
       - path: Armature/Main/Butt/Tail.1/Tail.2/Tail.3/Tail.4
-        weight: 0
+        weight: 1
       - path: Armature/Main/Butt/Tail.1/Tail.2/Tail.3/Tail.4/Tail.4_end
-        weight: 0
+        weight: 1
       - path: Armature/Main/Belly
-        weight: 0
+        weight: 1
       - path: Armature/Main/Belly/Belly_end
-        weight: 0
+        weight: 1
       - path: Head
         weight: 0
       - path: Body
@@ -686,9 +687,9 @@ ModelImporter:
       - path: Armature/Main/Butt/Tail.1/Tail.2/Tail.3/Tail.4/Tail.4_end
         weight: 0
       - path: Armature/Main/Belly
-        weight: 0
+        weight: 1
       - path: Armature/Main/Belly/Belly_end
-        weight: 0
+        weight: 1
       - path: Head
         weight: 0
       - path: Body
@@ -710,7 +711,7 @@ ModelImporter:
       loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
-      loopBlendPositionY: 1
+      loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
@@ -792,9 +793,9 @@ ModelImporter:
       - path: Armature/Main/Butt/Tail.1/Tail.2/Tail.3/Tail.4/Tail.4_end
         weight: 0
       - path: Armature/Main/Belly
-        weight: 0
+        weight: 1
       - path: Armature/Main/Belly/Belly_end
-        weight: 0
+        weight: 1
       - path: Head
         weight: 0
       - path: Body
@@ -922,7 +923,7 @@ ModelImporter:
       loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
-      loopBlendPositionY: 1
+      loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
@@ -1004,9 +1005,9 @@ ModelImporter:
       - path: Armature/Main/Butt/Tail.1/Tail.2/Tail.3/Tail.4/Tail.4_end
         weight: 0
       - path: Armature/Main/Belly
-        weight: 0
+        weight: 1
       - path: Armature/Main/Belly/Belly_end
-        weight: 0
+        weight: 1
       - path: Head
         weight: 0
       - path: Body

@@ -14,78 +14,67 @@ public class PlayerControl2 : MonoBehaviour {
 
 
 	private float headRotationX = 0;
-	Rigidbody rigid_body;
-	Animator animator;
-
+	private Animator animator;
+	private Rigidbody rb;
 
 
 
 	void Start () {
+		rb = GetComponent<Rigidbody>();
 		animator = GetComponentInChildren<Animator>();
-		rigid_body = GetComponent<Rigidbody>();
-		
-		
 	}
 
-	void Update () {
-		// handle walk/strafe
-		//float forward = Input.GetAxis("Vertical") * forward_speed;
+	void FixedUpdate () {
+		
+		// handle walk/strafe	
 		float forward = InputManager.ActiveDevice.LeftStickY.Value * forward_speed;
-
-		// Debug.Log(InputManager.ActiveDevice.Action1.IsPressed);
-
-	//float left = Input.GetAxis("Horizontal") * strafe_speed;
 		float left = InputManager.ActiveDevice.LeftStickX.Value * strafe_speed;
+		Vector3 deltaPosition =  transform.rotation * new Vector3(left, 0, forward) * Time.deltaTime;
+		rb.MovePosition(rb.position + deltaPosition);
 
-		forward *= Time.deltaTime;
-        left *= Time.deltaTime;
-        transform.Translate(left, 0, forward);
-
-
+		
 		// handle turn
-		//float rotation = Input.GetAxis("RHorizontal") * rotation_speed;
-		float rotation = InputManager.ActiveDevice.RightStickX.Value * rotation_speed;
-		rotation *= Time.deltaTime;
-		transform.Rotate(0, rotation, 0);
-
+		float r = InputManager.ActiveDevice.RightStickX.Value * rotation_speed * Time.deltaTime;
+        Quaternion deltaRotation = Quaternion.Euler(0f, r, 0f);
+		rb.MoveRotation(rb.rotation * deltaRotation);
+	
 		// handle head up/down
-		//float lookUpDown = Input.GetAxis("RVertical") * look_speed;
 		float lookUpDown = InputManager.ActiveDevice.RightStickY.Value * look_speed;
 		lookUpDown *= Time.deltaTime;
 		headRotationX += lookUpDown;
 		headRotationX = Mathf.Clamp(headRotationX, -50f, 60f);
 
+		// move camera
 		if (headCamera) {
-		headCamera.localEulerAngles = new Vector3(headRotationX, 0, 0);
+			headCamera.localEulerAngles = new Vector3(headRotationX, 0, 0);
 		}
-        // handle jumping
-        Debug.DrawLine(transform.position + new Vector3(0,.1f,0),
-					   transform.position + new Vector3(0,.1f,0) - Vector3.up * .2f
-					   , Color.red);
-		//if (Input.GetButtonDown ("Jump") && IsGrounded(.2f)) {
+        
+		
+		// handle jumping
 		if (InputManager.ActiveDevice.Action1.WasPressed && IsGrounded(.2f)) {
-			rigid_body.AddForce (new Vector3 (0, jump_strength, 0), ForceMode.Impulse);
+			Debug.Log("jump");
+			rb.AddForce (new Vector3 (0, jump_strength, 0), ForceMode.Impulse);
         }
-
-
+		
 
 		// update animation states
-		animator.SetFloat("Speed", forward * anim_scale, 0.04f, Time.deltaTime);
-		animator.SetFloat("Strafe", left * anim_scale, 0.04f, Time.deltaTime);
+		animator.SetFloat("Speed", forward * anim_scale * Time.deltaTime, 0.04f, Time.deltaTime);
+		animator.SetFloat("Strafe", left * anim_scale * Time.deltaTime, 0.04f, Time.deltaTime);
 		animator.SetBool("Grounded",  IsGrounded(.2f));
 
+        // Debug.DrawLine(transform.position + new Vector3(0,.1f,0),
+		// 			   transform.position + new Vector3(0,.1f,0) - Vector3.up * .2f
+		// 			   , Color.red);
 	}
-	void LateUpdate(){
+
+
+	void LateUpdate() {
+		// bone manipulation should be in LateUpdate() so that it happens after the Animator moves the armature
 		neckBone.localEulerAngles = new Vector3(-headRotationX * .5f, 180, 0);
 		torsoBone.localEulerAngles = new Vector3(90 + headRotationX * .5f, 0, 0);
 	}
 
 	 bool IsGrounded(float checkDistance) {
-		if (Physics.Raycast(transform.position + new Vector3(0,.1f,0), -Vector3.up, checkDistance))
-        {
-            return true;
-        }
-
-        return false;
+		return Physics.Raycast(transform.position + new Vector3(0,.1f,0), -Vector3.up, checkDistance);
 	}
 }

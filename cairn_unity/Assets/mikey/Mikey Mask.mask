@@ -6,5 +6,89 @@ AvatarMask:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Mikey Mask
-  m_Mask: 01000000000000000000000001000000010000000000000000000000000000000000000001000000010000000100000001000000
-  m_Elements: []
+  m_Mask: 01000000010000000100000000000000000000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 0
+  - m_Path: Armature/Main
+    m_Weight: 0
+  - m_Path: Armature/Main/Belly
+    m_Weight: 0
+  - m_Path: Armature/Main/Belly/Belly_end
+    m_Weight: 0
+  - m_Path: Armature/Main/Butt
+    m_Weight: 0
+  - m_Path: Armature/Main/Butt/Tail.1
+    m_Weight: 0
+  - m_Path: Armature/Main/Butt/Tail.1/Tail.2
+    m_Weight: 0
+  - m_Path: Armature/Main/Butt/Tail.1/Tail.2/Tail.3
+    m_Weight: 0
+  - m_Path: Armature/Main/Butt/Tail.1/Tail.2/Tail.3/Tail.4
+    m_Weight: 0
+  - m_Path: Armature/Main/Butt/Tail.1/Tail.2/Tail.3/Tail.4/Tail.4_end
+    m_Weight: 0
+  - m_Path: Armature/Main/Hip.L
+    m_Weight: 0
+  - m_Path: Armature/Main/Hip.L/UpperLeg.L
+    m_Weight: 0
+  - m_Path: Armature/Main/Hip.L/UpperLeg.L/LowerLeg.L
+    m_Weight: 0
+  - m_Path: Armature/Main/Hip.L/UpperLeg.L/LowerLeg.L/Foot.L
+    m_Weight: 0
+  - m_Path: Armature/Main/Hip.L/UpperLeg.L/LowerLeg.L/Foot.L/Toe.L
+    m_Weight: 0
+  - m_Path: Armature/Main/Hip.L/UpperLeg.L/LowerLeg.L/Foot.L/Toe.L/Toe.L_end
+    m_Weight: 0
+  - m_Path: Armature/Main/Hip.R
+    m_Weight: 0
+  - m_Path: Armature/Main/Hip.R/UpperLeg.R
+    m_Weight: 0
+  - m_Path: Armature/Main/Hip.R/UpperLeg.R/LowerLeg.R
+    m_Weight: 0
+  - m_Path: Armature/Main/Hip.R/UpperLeg.R/LowerLeg.R/Foot.R
+    m_Weight: 0
+  - m_Path: Armature/Main/Hip.R/UpperLeg.R/LowerLeg.R/Foot.R/Toe.R
+    m_Weight: 0
+  - m_Path: Armature/Main/Hip.R/UpperLeg.R/LowerLeg.R/Foot.R/Toe.R/Toe.R_end
+    m_Weight: 0
+  - m_Path: Armature/Main/Torso
+    m_Weight: 0
+  - m_Path: Armature/Main/Torso/Neck
+    m_Weight: 0
+  - m_Path: Armature/Main/Torso/Neck/Head 1
+    m_Weight: 0
+  - m_Path: Armature/Main/Torso/Neck/Head 1/Head_end
+    m_Weight: 0
+  - m_Path: Armature/Main/Torso/Shoulder.L
+    m_Weight: 0
+  - m_Path: Armature/Main/Torso/Shoulder.L/UpperArm.L
+    m_Weight: 0
+  - m_Path: Armature/Main/Torso/Shoulder.L/UpperArm.L/LowerArm.L
+    m_Weight: 0
+  - m_Path: Armature/Main/Torso/Shoulder.L/UpperArm.L/LowerArm.L/Hand.L
+    m_Weight: 0
+  - m_Path: Armature/Main/Torso/Shoulder.L/UpperArm.L/LowerArm.L/Hand.L/Hand.L_end
+    m_Weight: 0
+  - m_Path: Armature/Main/Torso/Shoulder.R
+    m_Weight: 0
+  - m_Path: Armature/Main/Torso/Shoulder.R/UpperArm.R
+    m_Weight: 0
+  - m_Path: Armature/Main/Torso/Shoulder.R/UpperArm.R/LowerArm.R
+    m_Weight: 0
+  - m_Path: Armature/Main/Torso/Shoulder.R/UpperArm.R/LowerArm.R/Hand.R
+    m_Weight: 0
+  - m_Path: Armature/Main/Torso/Shoulder.R/UpperArm.R/LowerArm.R/Hand.R/Hand.R_end
+    m_Weight: 0
+  - m_Path: Body
+    m_Weight: 1
+  - m_Path: Head
+    m_Weight: 1
+  - m_Path: Left_Eye
+    m_Weight: 1
+  - m_Path: Right_Eye
+    m_Weight: 1
+  - m_Path: Whiskers
+    m_Weight: 1

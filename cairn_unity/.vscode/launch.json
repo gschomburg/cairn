@@ -6,7 +6,11 @@
 			"type":"mono",
 			"request":"attach",
 			"address":"localhost",
+<<<<<<< Updated upstream
 			"port":14256
+=======
+			"port":56127
+>>>>>>> Stashed changes
 		}
 	]
 }
